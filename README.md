@@ -100,3 +100,5 @@ end
 ### let を上書きしない
 
 ### shared_example, shared_context は控える
+
+### subject を使うときの注意事項
