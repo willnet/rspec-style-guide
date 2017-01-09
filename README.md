@@ -2,15 +2,53 @@
 
 ## context と describe
 
+describe と context はメソッドの内容は同じだが、使い分けることでわかりやすくできる
+
+- describe の引数にはテストの対象を書く
+- context の引数にはテストを実行するための条件を書く
+
+TODO: 実例
+
 ## FactoryGirl
 
 - カラムの値は基本的にランダム値とする
  - 必要な値のみをテスト中で明示的に指定することにより、「このテストで重要な値はなにか」がわかりやすくなる
 
+### よくない例
+
+```ruby
+FactoryGirl.define do
+  factory :user do
+    sequence(:name) { |i| "test#{i}"}
+    active true
+  end
+end
+```
+
+```ruby
+describe User, type: :model do
+  describe '#make_comment' do # active が false だとコケるメソッドの方が良いのでは
+    let!(:user) { create :user }
+
+    it 'コメントが作成されること' do
+      expect { user.make_comment }.to change { Comment.count }.by(1)
+    end
+  end
+end
+```
+
+これは active が true であることが暗黙的な条件になってしまっている。
+
+メモ: もっとデフォルト値に依存しているけど依存していることがわかりづらい例にしたい
+
+### よい例
+
 ## 日付を取り扱うテストを書く
 
 - 相対日時を利用したほうが良いケース
 - 絶対日時を利用したほうが良いケース
+
+## 日付を外部から注入する
 
 ## スコープを考慮する
 
@@ -18,6 +56,11 @@
  - let(let!)で定義するものは「後で参照するもの」
 
 ## 控えめなDRY
+
+- テストはDRYにしない方が良い
+- コードが重複していればDRYにして良いかというと、そうではないケースもある
+  - 実例ほしい！
+- 意味的に重複していればOK
 
 ### describe 外にテストデータを置かない
 
