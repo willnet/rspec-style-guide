@@ -2,12 +2,53 @@
 
 ## context と describe
 
-describe と context はメソッドの内容は同じだが、使い分けることでわかりやすくできる
+describe と context は同じメソッドだが、次のように使い分けることで何をテストしているのかをわかりやすくできる。
 
 - describe の引数にはテストの対象を書く
 - context の引数にはテストを実行するための条件を書く
 
-TODO: 実例
+### 例
+
+```ruby
+describe Stack do
+  let!(:stack) { Stack.new }
+
+  describe '#push' do
+    context '文字列をpushしたとき' do
+      before { stack.push('value') }
+
+      it '返り値がpushした値であること' do
+        expect(stack).to eq 'value'
+      end
+    end
+
+    context 'nilをpushした場合' do
+      it 'ArgumentErrorになること' do
+        expect { stack.push(nil) }.to raise_error(ArgumentError)
+      end
+    end
+  end
+
+  describe '#pop' do
+    context 'スタックが空の場合' do
+      it '返り値はnilであること' do        
+        expect(stack.pop).to be_nil
+      end
+    end
+
+    context 'スタックに値があるとき' do
+      before do
+        stack.push 'value1'
+        stack.push 'value2'        
+      end
+
+      it '最後の値を取得すること' do
+        expect(stack.pop).to eq 'value2'
+      end
+    end
+  end
+end
+```
 
 ## FactoryGirl
 
