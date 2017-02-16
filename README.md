@@ -186,3 +186,5 @@ end
 ### shared_example, shared_context は控える
 
 ### subject を使うときの注意事項
+
+### allow_any_instance_of を避ける
