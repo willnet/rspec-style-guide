@@ -52,15 +52,23 @@ end
 
 ## FactoryGirl
 
-- カラムの値は基本的にランダム値とする
- - 必要な値のみをテスト中で明示的に指定することにより、「このテストで重要な値はなにか」がわかりやすくなる
+各カラムの値は、次のようになるべくすべてランダム値となるように設定を書く。その上で、必要な値のみをテスト中で明示的に指定することにより、「このテストで重要な値はなにか」がわかりやすくなる。
+
+```ruby
+FactoryGirl.define do
+  factory :user do
+    sequence(:name) { |i| "test#{i}"}
+    active { [true, false].sample }
+  end
+end
+```
 
 ### よくない例
 
 ```ruby
 FactoryGirl.define do
   factory :user do
-    sequence(:name) { |i| "test#{i}"}
+    name 'willnet'
     active true
   end
 end
@@ -68,15 +76,19 @@ end
 
 ```ruby
 describe User, type: :model do
-  describe '#make_comment' do # active が false だとコケるメソッドの方が良いのでは
-    let!(:user) { create :user }
+  describe '#send_message' do
+    let!(:sender) { create :user, name: 'maeshima' }
+    let!(:receiver) { create :user, name: 'kamiya' }
 
-    it 'コメントが作成されること' do
-      expect { user.make_comment }.to change { Comment.count }.by(1)
+    it 'メッセージが正しく送られること' do
+      expect { sender.send_message(receiver: receiver, body: 'hello!') }
+        .to change { Message.count }.by(1)
     end
   end
 end
 ```
+
+このテストは、`receiver.active #=> false`のときにどう振る舞うかを伝えることができていない。`receiver.active #=> false`
 
 これは active が true であることが暗黙的な条件になってしまっている。
 
