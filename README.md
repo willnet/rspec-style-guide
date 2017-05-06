@@ -326,6 +326,60 @@ end
 
 ### shared_example, shared_context は控える
 
-### subject を使うときの注意事項
+### subjectを使うときの注意事項
+
+`subject`は`is_expected`や`should`を使い一行でexpectationを書く場合は便利だが、逆に可読性を損なう使われ方をされる場合がある。
+
+```ruby
+describe 'ApiClient#save_record_from_api' do
+  let!(:client) { ApiClient.new }
+  subject { client.save_record_from_api(params) }
+
+  #
+  # ...多くのexpectationを省略している...
+  #
+
+  context 'when pass  { limit: 10 }' do
+    let(:params) { { limit: 10} }
+
+    it 'return ApiResponse object' do
+      is_expected.to be_an_instance_of ApiResponse
+    end
+
+    it 'save 10 items' do
+      expect { subject }.to change { Item.count }.by(10)
+    end
+  end
+end
+```
+
+このようなとき、`expect { subject }`の`subject`は一体何を実行しているのかすぐには判断できず、ファイルのはるか上方にある`subject`の定義を確認しなければならない。
+
+そもそも"subject"は名詞であり、副作用を期待する箇所で定義すると混乱を招く。
+
+`is_expected`を利用し暗黙の`subject`を利用する箇所と直接`subject`を明示する箇所が混在しており、どうしても`subject`を使いたい場合は、`subject`に名前をつけて使うと良い。
+
+```ruby
+describe 'ApiClient#save_record_from_api' do
+  let!(:client) { ApiClient.new }
+  subject(:execute_api_with_params) { client.save_record_from_api(params) }
+
+  context 'when pass  { limit: 10 }' do
+    let(:params) { { limit: 10} }
+
+    it 'return ApiResponse object' do
+      is_expected.to be_an_instance_of ApiResponse
+    end
+
+    it 'save 10 items' do
+      expect { execute_api_with_params }.to change { Item.count }.by(10)
+    end
+  end
+end
+```
+
+`expect { subject }`の時よりはわかりやすくなったはずだ。
+
+`is_expected`を利用していない場合は、`subject`の利用をやめて`client.save_record_from_api(params)`を各expectationにべた書きするのが良い。
 
 ### allow_any_instance_of を避ける
