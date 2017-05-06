@@ -52,18 +52,11 @@ end
 
 ## FactoryGirl
 
-各カラムの値は、次のようになるべくすべてランダム値となるように設定を書く。その上で、必要な値のみをテスト中で明示的に指定することにより、「このテストで重要な値はなにか」がわかりやすくなる。
-
-```ruby
-FactoryGirl.define do
-  factory :user do
-    sequence(:name) { |i| "test#{i}"}
-    active { [true, false].sample }
-  end
-end
-```
+FactoryGirlを利用した場合、各モデルのデフォルトのカラム値を設定することになる。このとき、各カラムの値がすべてランダム値となるように設定を書くとよい。その上で、必要な値のみをテスト中で明示的に指定することにより、「このテストで重要な値はなにか」がわかりやすくなる。
 
 ### よくない例
+
+アカウントが有効化されているかどうかをactiveカラムで管理しているとする。このような、有効／無効を表すカラムが固定されているケースはよく見かける。
 
 ```ruby
 FactoryGirl.define do
@@ -88,13 +81,36 @@ describe User, type: :model do
 end
 ```
 
-このテストは、`receiver.active #=> false`のときにどう振る舞うかを伝えることができていない。`receiver.active #=> false`
+このテストは`User#active`が`true`であることが暗黙的な条件になってしまっている。`sender.active #=> false`のときや`receiver.active #=> false`のときにどう振る舞うかを伝えることができていない。
 
-これは active が true であることが暗黙的な条件になってしまっている。
-
-メモ: もっとデフォルト値に依存しているけど依存していることがわかりづらい例にしたい
+さらに、このテストでは`name`を明示的に指定しているがこれは必要な指定なのだろうか？テストを読む人に余計なリソースを消費させてしまう、無駄なデータ指定はなるべく避けるのが好ましい。
 
 ### よい例
+
+```ruby
+FactoryGirl.define do
+  factory :user do
+    sequence(:name) { |i| "test#{i}"}
+    active { [true, false].sample }
+  end
+end
+```
+
+```ruby
+describe User, type: :model do
+  describe '#send_message' do
+    let!(:sender) { create :user }
+    let!(:receiver) { create :user }
+
+    it 'メッセージが正しく送られること' do
+      expect { sender.send_message(receiver: receiver, body: 'hello!') }
+        .to change { Message.count }.by(1)
+    end
+  end
+end
+```
+
+このテストだと「`User#active`の戻り値が`User#send_message`の動作に影響しない」ということが(暗黙的にであるが)伝わる。もし`User#active`が影響するような修正が加えられた場合、CIで時々テストが失敗することに酔って、テストが壊れたことに気付けるはずだ。
 
 ## 日付を取り扱うテストを書く
 
