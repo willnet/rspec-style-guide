@@ -178,10 +178,64 @@ end
 
 [「現在時刻」を外部入力とする設計と、その実装のこと - クックパッド開発者ブログ](http://techlife.cookpad.com/entry/2016/05/30/183947)
 
-## スコープを考慮する
+## beforeとlet(let!)の使い分け
 
-- before で十分なものは let(let!) にしない
- - let(let!)で定義するものは「後で参照するもの」
+テストの前提となるオブジェクト(やレコード)を生成する場合、let(let!)やbeforeを使う。このとき、生成後に参照するものをlet(let!)で生成し、それ以外をbeforeで生成すると可読性が増す。
+
+次のような`scope`を持つ`User`モデルがあるとする。
+
+```ruby
+class User < ApplicationRecord
+  scope :active, -> { where(deleted: false).where.not(confirmed_at: nil) }
+end
+```
+
+このテストを`let!`のみを用いて書くと次のようになる。
+
+```ruby
+require 'rails_helper'
+
+RSpec.describe User, type: :model do
+  describe '.active' do
+    let!(:active) { create :user, deleted: false, confirmed_at: Time.zone.now }
+    let!(:deleted_but_confirmed) { create :user, deleted: true, confirmed_at: Time.zone.now }
+    let!(:deleted_and_not_convirmed) { create :user, deleted: true, confirmed_at: nil }
+    let!(:not_deleted_but_not_confirmed) { create :user, deleted: false, confirmed_at: nil }
+
+    it 'return active users' do
+      expect(User.active).to eq [active]
+    end
+  end
+end
+```
+
+`let!`と`before`を併用して書くと次のようになる。
+
+```ruby
+require 'rails_helper'
+
+RSpec.describe User, type: :model do
+  describe '.active' do
+    let!(:active) { create :user, deleted: false, confirmed_at: Time.zone.now }
+
+    before do
+      create :user, deleted: true, confirmed_at: Time.zone.now
+      create :user, deleted: true, confirmed_at: nil
+      create :user, deleted: false, confirmed_at: nil
+    end
+
+    it 'return active users' do
+      expect(User.active).to eq [active]
+    end
+  end
+end
+```
+
+後者のほうが「メソッドの戻り値となるオブジェクト」と「それ以外」を区別しやすく、見やすいコードとなる。
+
+※`let!(:deleted_but_confirmed)`のように名前をつけることで、どんなレコードなのか理解しやすくなると感じる人もいるかもしれない。しかしレコードに名前付けが必要であれば、単純にコメントとして補足してやればよいだろう
+
+## スコープを考慮する
 
 ## 控えめなDRY
 
