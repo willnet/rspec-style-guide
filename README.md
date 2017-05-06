@@ -320,6 +320,72 @@ end
 
 ### 必要ないレコードを作らない
 
+パフォーマンスの観点から、レコードを作らなくてすむ場合は作らないようにしたい。
+
+```ruby
+describe 'posts#index' do
+  context 'when visit /posts' do
+    let!(:posts) { create_list :post, 100 }
+
+    before { visit posts_path }
+
+    it 'display all post titles' do
+      posts.each do |post|
+        expect(page).to have_content post.title
+      end
+    end
+  end
+end
+```
+
+「100件の投稿タイトルが表示できること」をテストしたい場合は別だが、ただ投稿タイトルを表示できているかチェックできればいい場合、明らかに無駄なレコードを作っている。
+
+この場合の最小限のレコード数は1件である。
+
+```ruby
+describe 'posts#index' do
+  context 'when visit /posts' do
+    let!(:post) { create :post }
+
+    before { visit posts_path }
+
+    it 'display post title' do
+      expect(page).to have_content post.title
+    end
+  end
+end
+```
+
+モデルのユニットテストでも、作らなくてよいレコードを作っているケースはよくある。
+
+```ruby
+describe 'User' do
+  describe '#fullname' do
+    let!(:user) { create :user, first_name: 'Shinichi', last_name: 'Maeshima' }
+
+    it 'return full name' do
+      expect(user.fullname).to eq 'Shinichi Maeshima'
+    end
+  end  
+end
+```
+
+`User#fullname`はレコードが保存されているか否かに影響しないメソッドである。この場合は`create`ではなく`build`(もしくは`build_stubbed`)を使う。
+
+```ruby
+describe 'User' do
+  describe '#fullname' do
+    let!(:user) { build :user, first_name: 'Shinichi', last_name: 'Maeshima' }
+
+    it 'return full name' do
+      expect(user.fullname).to eq 'Shinichi Maeshima'
+    end
+  end  
+end
+```
+
+このような単純なケースでは`User.new`を利用しても良い。
+
 ### update でデータを変更しない
 
 ### let を上書きしない
