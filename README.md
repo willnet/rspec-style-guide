@@ -389,7 +389,45 @@ end
 
 このような単純なケースでは`User.new`を利用しても良い。
 
-### update でデータを変更しない
+### updateでデータを変更しない
+
+FactoryGirlで作成したレコード中のカラムをupdateメソッドで変更すると、最終的なレコードの状態がわかりにくくなるし、テストに依存している属性もわかりにくくなるので避ける。
+
+```ruby
+describe Post do
+  let!(:post) { create :post }
+
+  describe '#published?' do
+    subject { post.published? }
+
+    context 'when the post has already published' do
+      it { is_expected.to eq true }
+    end
+
+    context 'when the post has not published' do
+      before { post.update(publish_at: nil) }
+
+      it { is_expected.to eq false }
+    end    
+
+    context 'when the post is closed' do
+      before { post.update(status: :close) }
+
+      it { is_expected.to eq false }
+    end    
+
+    context 'when the title includes "[WIP]"' do
+      before { post.update(title: '[WIP]hello world') }
+
+      it { is_expected.to eq true }
+    end    
+  end    
+end
+```
+
+`Post#published?`メソッドに依存している属性をすぐに理解することができるだろうか？updateはたいていFactoryGirlのデフォルト値を「一番データとして多い形」に設定し、それを少し変更して使うために使われる。
+
+updateは使用せず、[FactoryGirlのデフォルト値)](https://github.com/willnet/rspec-style-guide#factorygirlのデフォルト値)に記載したようにデフォルト値をランダムに保つと良い。
 
 ### let を上書きしない
 
