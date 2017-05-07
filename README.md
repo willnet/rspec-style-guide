@@ -429,9 +429,44 @@ end
 
 updateは使用せず、[FactoryGirlのデフォルト値)](https://github.com/willnet/rspec-style-guide#factorygirlのデフォルト値)に記載したようにデフォルト値をランダムに保つと良い。
 
-### let を上書きしない
+### letを上書きしない
 
+`let`で定義したパラメータを内側のcontextで上書きすると、[updateでデータを変更しない](https://github.com/willnet/rspec-style-guide#updateでデータを変更しない)で説明した例と同様に、最終的なレコードの状態がわかりにくくなるので避ける。
 
+```ruby
+describe Post do
+  let!(:post) { create :post, title: title, status: status, publish_at: publish_at }
+  let(:title) { 'hello world' }
+  let(:status) { :open }
+  let(:publish_at) { Time.zone.now }
+
+  describe '#published?' do
+    subject { post.published? }
+
+    context 'when the post has already published' do
+      it { is_expected.to eq true }
+    end
+
+    context 'when the post has not published' do
+      let(:publish_at) { nil }
+
+      it { is_expected.to eq false }
+    end    
+
+    context 'when the post is closed' do
+      let(:status) { :close }
+
+      it { is_expected.to eq false }
+    end    
+
+    context 'when the title includes "[WIP]"' do
+      let(:title) { '[WIP]hello world'}
+
+      it { is_expected.to eq true }
+    end    
+  end    
+end
+```
 
 ### subjectを使うときの注意事項
 
