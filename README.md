@@ -524,4 +524,66 @@ end
 
 `is_expected`を利用していない場合は、`subject`の利用をやめて`client.save_record_from_api(params)`を各expectationにべた書きするのが良い。
 
-### allow_any_instance_of を避ける
+### allow_any_instance_ofを避ける
+
+[公式のドキュメント](https://relishapp.com/rspec/rspec-mocks/docs/working-with-legacy-code/any-instance)にも書かれているが、`allow_any_instance_of`(`expect_any_instance_of`)が必要な時点でテスト対象の設計がおかしい可能性がある。
+
+例として、次のような`Statement#issue`のテストを書いてみる。
+
+```ruby
+class Statement
+  def issue(body)
+    client = TwitterClient.new
+    client.issue(body)
+  end
+end
+```
+
+```ruby
+describe Statement do
+  describe '#issue' do
+    let!(:statement) { Statement.new }
+
+    it 'call TwitterClient#issue' do
+      expect_any_instance_of(TwitterClient).to receive(:issue).with('hello')
+      statement.issue('hello')
+    end
+  end
+end
+```
+
+`expect_any_instance_of`を使ってしまったのは、`Statement`クラスと`TwitterClient`クラスが密結合しているのが原因である。結合を弱めてみる。
+
+```ruby
+class Statement
+  def initialize(client: TwitterClient.new)
+    @client = client
+  end
+
+  def issue(body)
+    client.issue(body)
+  end
+
+  private
+
+  def client
+    @client
+  end
+end
+```
+
+```ruby
+describe Statement do
+  describe '#issue' do
+    let!(:client) { double('client') }
+    let!(:statement) { Statement.new }
+
+    it 'call TwitterClient#issue' do
+      expect(client).to receive(:issue).with('hello')
+      statement.issue('hello')
+    end
+  end
+end
+```
+
+`issue`メソッドを持つオブジェクトであれば、どのクラスでも`client`として扱えるように修正した。外部から`client`を指定できる作りにしたことで、将来的に`FacebookClient`など別のクライアントにも対応できるようになった。結合が弱まり、単純なモックオブジェクトでテストが記述できるようになった。
