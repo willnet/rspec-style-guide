@@ -110,7 +110,7 @@ describe User, type: :model do
 end
 ```
 
-このテストだと「`User#active`の戻り値が`User#send_message`の動作に影響しない」ということが(暗黙的にであるが)伝わる。もし`User#active`が影響するような修正が加えられた場合、CIで時々テストが失敗することに酔って、テストが壊れたことに気付けるはずだ。
+このテストだと「`User#active`の戻り値が`User#send_message`の動作に影響しない」ということが(暗黙的にであるが)伝わる。もし`User#active`が影響するような修正が加えられた場合、CIで時々テストが失敗することによって、テストが壊れたことに気付けるはずだ。
 
 ## FactoryGirlで多数の関連を扱う
 
