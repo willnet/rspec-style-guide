@@ -1,4 +1,4 @@
-# RSpec スタイルガイド
+shared_examples# RSpec スタイルガイド
 
 ## context と describe
 
@@ -242,7 +242,141 @@ end
 
 DRYにする行為は常に善だと思われているかもしれないが、そうではない。例えばコードの重複を一つにまとめるということは処理の抽象化をするということで、状況や抽象化の仕方によってはDRYによって減らされたコストを上回るコストが発生することもある。
 
-### shared_example, shared_context は控える
+### shared_examplesはよく考えて使う
+
+shared_examplesを利用するとコードの重複を削除できるが、書き方によってはかえって可読性を落とすことがある。
+
+
+例として、引数として渡された曜日に対応した分だけポイントを増やすメソッド`Point#increase_by_day_of_the_week`のテストを`shared_examples`を利用して書いてみる。shard_exampleの定義は別ファイルに書かれているとして、先にshared_examplesを利用する側だけのコードを見てみる。
+
+```ruby
+RSpec.describe Point, type: :model do
+  describe '#increase_by_day_of_the_week' do
+    let(:point) { create :point, point: 0 }
+
+    it_behaves_like 'point increasing by day of the week', 100 do
+      let(:wday) { 0 }
+    end
+
+    it_behaves_like 'point increasing by day of the week', 50 do
+      let(:wday) { 1 }
+    end
+
+    it_behaves_like 'point increasing by day of the week', 30 do
+      let(:wday) { 2 }
+    end
+
+    # ...
+  end
+end
+```
+
+どんな前提条件で結果として何を期待しているのか、これだけを見て理解できるだろうか。
+
+定義は次のようになる。
+
+```ruby
+RSpec.shared_examples 'point increasing by day of the week' do |expected_point|
+  it "increase by #{expected_point}" do
+    expect(point.point).to eq 0
+    point.increase_by_day_of_the_week(wday)
+    expect(point.point).to eq expected_point
+  end
+end
+```
+
+このテストが読みづらいのは、shared_examplesを成立させるために必要な前提条件が多いことが一つ挙げられる。
+
+- テストされる主体である`point`
+- メソッドに渡される引数である`wday`
+- 期待する結果である`expected_point`
+
+また、それぞれの定義が分散していることが挙げられる
+
+- 外側のlet(point)
+- `it_behaves_like`ブロック内のlet(wday)
+- `it_behaves_like`の第二引数(expected_point)
+
+可読性を上げるには、まず、適切に名前をつけることが考えられるだろう。
+
+```ruby
+RSpec.shared_examples 'point increasing by day of the week' do |expected_point:|
+  it "increase by #{expected_point}" do
+    expect(point.point).to eq 0
+    point.increase_by_day_of_the_week(wday)
+    expect(point.point).to eq expected_point
+  end
+end
+
+RSpec.describe Point, type: :model do
+  describe '#increase_by_day_of_the_week' do
+    let(:point) { create :point, point: 0 }
+
+    context 'on sunday' do
+      let(:wday) { 0 }
+      it_behaves_like 'point increasing by day of the week', expected_point: 100
+    end
+
+    context 'on monday' do
+      let(:wday) { 1 }
+      it_behaves_like 'point increasing by day of the week', expected_point: 50
+    end
+
+    context 'on tuesday' do
+      let(:wday) { 2 }
+      it_behaves_like 'point increasing by day of the week', expected_point: 30
+    end
+
+    # ...
+  end
+end
+```
+
+新しくcontextを作り、`wday`についての説明を加えた。そして、期待する結果である`expected_point`をキーワード引数として利用することで、実引数側に名前がつき、数値が何を表すのかすぐに理解できるようになった。
+
+しかし、そもそもこれは`shared_examples`を利用すべきケースなのだろうか？`shared_examples`を利用せずに書くと次のようになる。
+
+```ruby
+RSpec.describe Point, type: :model do
+  describe '#increase_by_day_of_the_week' do
+    let(:point) { create :point, point: 0 }
+
+    context 'on sunday' do
+      let(:wday) { 0 }
+
+      it "increase by 100" do
+        expect(point.point).to eq 0
+        point.increase_by_day_of_the_week(wday)
+        expect(point.point).to eq 100
+      end
+    end
+
+    context 'on monday' do
+      let(:wday) { 1 }
+
+      it "increase by 50" do
+        expect(point.point).to eq 0
+        point.increase_by_day_of_the_week(wday)
+        expect(point.point).to eq 50
+      end
+    end
+
+    context 'on tuesday' do
+      let(:wday) { 2 }
+
+      it "increase by 30" do
+        expect(point.point).to eq 0
+        point.increase_by_day_of_the_week(wday)
+        expect(point.point).to eq 30
+      end
+    end
+
+    # ...
+  end
+end
+```
+
+`it_behaves_like`での前提条件や引数が多くなればなるほど複雑度が増す。DRYにするメリットが複雑度を上回るかどうか、慎重に考えるべきだ。
 
 ## スコープを考慮する
 ### describe 外にテストデータを置かない
