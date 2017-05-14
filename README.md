@@ -1,4 +1,4 @@
-shared_examples# RSpec スタイルガイド
+# RSpec スタイルガイド
 
 ## context と describe
 
@@ -112,7 +112,88 @@ end
 
 このテストだと「`User#active`の戻り値が`User#send_message`の動作に影響しない」ということが(暗黙的にであるが)伝わる。もし`User#active`が影響するような修正が加えられた場合、CIで時々テストが失敗することによって、テストが壊れたことに気付けるはずだ。
 
-## FactoryGirlで多数の関連を扱う
+## FactoryGirlで一対多以上の関連をデフォルトで作成しない
+
+FactoryGirlでモデルを作成する際に、関連しているモデルも同時に作成することができる。
+
+belongs_toやhas_oneでの関連であれば特に問題はないが、has_manyの関連を扱う場合には注意が必要になる。
+
+例として、UserとPostが一対多としてUserのFactoryGirlでの定義を書いてみる。
+
+```ruby
+FactoryGirl.define do
+  factory :user do
+    sequence(:name) { |i| "username#{i}" }
+
+    after(:create) do |user, evaluator|
+      create_list(:post, 2, user: user)
+    end
+  end
+end
+```
+
+`after(:create)`を使い、Userが作成された際に関連するPostも作成されるようにした。この定義を用いてUserが投稿したPostのうち、人気順で返す`User#posts_ordered_by_popularity`のテストを書いてみる。
+
+
+```ruby
+RSpec.describe User, type: :model do
+  describe '#posts_ordered_by_popularity' do
+    let!(:user) { create(:user) }
+    let!(:post_popular) do
+      post = user.posts[0]
+      post.update(popularity: 5)
+      post
+    end
+    let!(:post_not_popular) do
+      post = user.posts[1]
+      post.update(popularity: 1)
+      post
+    end
+
+    it 'return posts ordered by populality' do
+      expect(user.posts_ordered_by_popularity).to eq [post_popular, post_not_popular]
+    end
+  end
+end
+```
+
+理解しづらいテストコードになった。このテストはUserのレコードを作成した時に、関連するPostを2つ作成することに依存している。また、[update](https://github.com/willnet/rspec-style-guide#updateでデータを変更しない)を利用してデータを変更しているため、最終的なレコードの状態を把握しづらくなっている。
+
+これを避けるには、まず、デフォルトで一対多の関連レコードを作成することをやめるとよい。
+
+```ruby
+FactoryGirl.define do
+  factory :user do
+    sequence(:name) { |i| "username#{i}" }
+
+    trait(:with_posts) do
+      after(:create) do |user, evaluator|
+        create_list(:post, 2, user: user)
+      end
+    end
+  end
+end
+```
+
+`trait`を利用し、デフォルトではPostを作成しないようにした。どんな値でも良いので関連先のPostがほしいときにはtraitを指定しUserを作成すれば良い。
+
+関連先はテスト中で明示的に作成するようにする。
+
+```ruby
+RSpec.describe User, type: :model do
+  describe '#posts_ordered_by_popularity' do
+    let!(:user) { create(:user) }
+    let!(:post_popular) { create :post, user: user, popularity: 5 }
+    let!(:post_not_popular) { create :post, user: user, popularity: 1 }
+
+    it 'return posts ordered by populality' do
+      expect(user.posts_ordered_by_popularity).to eq [post_popular, post_not_popular]
+    end
+  end
+end
+```
+
+これで、最初の例よりだいぶ見やすくなった。
 
 ## 日時を取り扱うテストを書く
 
