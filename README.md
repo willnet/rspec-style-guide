@@ -1,8 +1,8 @@
 # RSpec スタイルガイド
 
-## context と describe
+## describeとcontext
 
-describe と context は同じメソッドだが、次のように使い分けることで何をテストしているのかをわかりやすくできる。
+`describe`と`context`は同じメソッドだが、次のように使い分けることで何をテストしているのかをわかりやすくできる。
 
 - describe の引数にはテストの対象を書く
 - context の引数にはテストを実行するための条件を書く
