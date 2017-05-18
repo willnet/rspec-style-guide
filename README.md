@@ -675,7 +675,7 @@ describe Post do
     context 'when the title includes "[WIP]"' do
       let(:title) { '[WIP]hello world'}
 
-      it { is_expected.to eq true }
+      it { is_expected.to eq false }
     end    
   end    
 end
