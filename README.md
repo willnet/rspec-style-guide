@@ -127,13 +127,13 @@ end
 
 このテストだと「`User#active`の戻り値が`User#send_message`の動作に影響しない」ということが(暗黙的にであるが)伝わる。もし`User#active`が影響するような修正が加えられた場合、CIで時々テストが失敗することによって、テストが壊れたことに気付けるはずだ。
 
-## FactoryGirlで一対多以上の関連をデフォルトで作成しない
+## FactoryGirlで`belongs_to`以外の関連をデフォルトで作成しない
 
 FactoryGirlでモデルを作成する際に、関連しているモデルも同時に作成することができる。
 
-belongs_toやhas_oneでの関連であれば特に問題はないが、has_manyの関連を扱う場合には注意が必要になる。
+対象の関連がbelongs_toであれば特に問題はないが、has_manyの関連を扱う場合には注意が必要になる。
 
-例として、UserとPostが一対多としてUserのFactoryGirlでの定義を書いてみる。
+例として、UserとPostが一対多だったとしてFactoryGirlでの定義を書いてみる。
 
 ```ruby
 FactoryGirl.define do
