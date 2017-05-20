@@ -17,7 +17,7 @@ We would like to improve our style guide by hearing all of your opinions, so ple
 
 ## `describe` and `context`
 
-`describe` and `method` are the same methods, but they can be used in the following ways to help differentiate the type of code your testing.
+`describe` and `context` are the same methods, but they can be used in the following ways to help differentiate the type of code you're testing.
 
 - The argument of `describe` is what is being tested
 - The argument of `context` is the presumed condition/state of the test when it is run
@@ -39,7 +39,7 @@ describe Stack do
 
     context 'when nil is pushed' do
       it 'raises an ArgumentError' do
-        expect { stack.push(nil) }.to raises_error(ArgumentError)
+        expect { stack.push(nil) }.to raise_error(ArgumentError)
       end
     end
   end
