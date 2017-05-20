@@ -1,7 +1,7 @@
 # RSpec Style Guide
 ## What's this?
 
-Etiquette for writing test code with high readibility
+Etiquette for writing test code with high readability
 
 We would like to improve our style guide by hearing all of your opinions, so please open issues and pull requests that correspond to the following:
 
@@ -64,3 +64,65 @@ describe Stack do
   end
 end
 ```
+
+# Default values in FactoryGirl
+
+When using FactoryGirl, you can create default values for the columns of each of your models. It's good to create random variables for each column when you do this. Also, by explicitly defining only which values are necessary inside the tests, it makes it easier to understand which values are the most important.
+
+### A bad example
+
+For example, we have a column named `active` which will determine whether a user account is active or not. You will often see cases like this where the active/inactive column is fixed.
+
+```ruby
+FactoryGirl.define do
+  factory :user do
+    name 'willnet'
+    active true
+  end
+end
+```
+
+```ruby
+describe User, type: :model do
+  describe '#send_message' do
+    let!(:sender) { create :user, name: 'maeshima' }
+    let!(:receiver) { create :user, name: 'kamiya' }
+
+    it 'sends a message correctly' do
+      expect { sender.send_message(receiver: receiver, body: 'hello!') }
+        .to change { Message.count }.by(1)
+    end
+  end
+end
+```
+
+In this test, `User#active` is implicitly set to `true`. When values like `sender.active #=> false` and `receiver.active #=> false` are not explicit, you can't tell what effect these conditions will have.
+
+Also, `name` is explicitly defined, but is it really needed? It's usually best to stay away from unneeded data that the reader will be looking at.
+
+### Good example
+
+```ruby
+FactoryGirl.define do
+  factory :user do
+    sequence(:name) { |i| "test#{i}" }
+    active { [true, false].sample }
+  end
+end
+```
+
+```ruby
+describe User, type: :model do
+  describe '#send_message' do
+    let!(:sender) { create :user }
+    let!(:receiver) { create :user }
+
+    it 'sends a message correctly' do
+      expect { sender.send_message(receiver: receiver, body: 'hello!') }
+        .to change { Message.count }.by(1)
+    end
+  end
+end
+```
+
+With this test, you can tell (although it is implicit) that the return value of `User#active` does not have an effect on the behavior of `User#send_message`. If any changes in the future have an effect on `User#active`, you should be able to tell that the test has failed when the CI tests don't pass every now and then.
