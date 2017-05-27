@@ -100,7 +100,7 @@ In this test, `User#active` is implicitly set to `true`. When values like `sende
 
 Also, `name` is explicitly defined, but is it really needed? It's usually best to stay away from unneeded data that the reader will be looking at.
 
-### Good example
+### A good example
 
 ```ruby
 FactoryGirl.define do
@@ -208,3 +208,64 @@ end
 ```
 
 Now we've made the test look a lot better.
+
+## Writing tests that use `Time`
+
+When writing tests for time, it's best to use a relative time in relation to the current time when the target of the test's time is not definite. Doing things this way increases the chances of discovering bugs.
+
+As an example, we'll write a scope that gets posts that were published last month, and we'll write it with a definite time.
+
+```ruby
+class Post < ApplicationRecord
+  scope :last_month_published, -> { where(publish_at: (Time.zone.now - 31.days).all_month) }
+end
+``` 
+
+```ruby
+require 'rails_helper'
+
+RSpec.describe Post, type: :model do
+  describe '.last_month_published' do
+    let!(:april_1st) { create :post, publish_at: Time.zone.local(2017, 4, 1) }
+    let!(:april_30th) { create :post, publish_at: Time.zone.local(2017, 4, 30) }
+
+    before do
+      create :post, publish_at: Time.zone.local(2017, 5, 1)
+      create :post, publish_at: Time.zone.local(2017, 3, 31)
+    end
+
+    it 'returns published posts from last month' do
+      Timecop.travel(2017, 5, 6) do
+        expect(Post.last_month_published).to contain_exactly(april_1st, april_30th)
+      end
+    end
+  end
+end
+```
+
+This test will always pass, but it has a bug in it.
+
+Let's change it to a relative time.
+
+```ruby
+require 'rails_helper'
+
+RSpec.describe Post, type: :model do
+  describe '.last_month_published' do
+    let!(:now) { Time.zone.now }
+    let!(:last_beginning_of_month) { create :post, publish_at: 1.month.ago(now).beginning_of_month }
+    let!(:last_end_of_month) { create :post, publish_at: 1.month.ago(now).end_of_month }
+
+    before do
+      create :post, publish_at: now
+      create :post, publish_at: 2.months.ago(now)
+    end
+
+    it 'returns published posts from last month' do
+      expect(Post.last_month_published).to contain_exactly(last_beginning_pof_month, last_end_of_month)
+    end
+  end
+end
+```
+
+This test, for example, will fail on May 1st. You won't always be able to detect bugs, but by using CI tests, you can decrease the chances of a bug sticking around for a long time.
