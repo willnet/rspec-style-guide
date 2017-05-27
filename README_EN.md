@@ -171,7 +171,7 @@ RSpec.describe User, type: :model do
 end
 ```
 
-This code is pretty difficult to understand. In this test, the User being created depends on the 2 Posts being created as well. Also, because [update](https://github.com/willnet/rspec-style-guide/README_EN.md#Don't change data with `update`) is being used to change the data, you can't really tell what state the record is in.
+This code is pretty difficult to understand. In this test, the User being created depends on the 2 Posts being created as well. Also, because [update](dont-change-data-with-update) is being used to change the data, you can't really tell what state the record is in.
 
 To avoid this, first of all let's change the code that created the has many association record as a default.
 
@@ -493,6 +493,7 @@ describe 'sample specs' do
   end
 end
 ```
+
 In this situation, b and c have the same conditions set beforehand, so there might be some people who would like to make this DRY in one level above.
 
 ```ruby
@@ -592,7 +593,7 @@ end
 
 You can use `User.name` in a simple case like this.
 
-### Don't change data with `update`
+### Don't change data with update
 
 It's difficult to grasp the final condition of a column of a record created with FactoryGirl when it is changed with `update`, and it's also hard to tell which attributes the test depends on, so it's best to avoid this.
 
@@ -630,11 +631,11 @@ end
 
 Can you tell immediately what attribute depends on the method 'Post#published?'? `update` is mainly used to set and slightly change the "the most used structure of the data being used" as the default value in FactoryGirl.
 
-As written in [Default values in FactoryGirl](https://github.com/willnet/rspec-style-guide/README_EN.md#Default values in FactoryGirl), it is good to write default values randomly, without using update.
+As written in [Default values in FactoryGirl](#default-values-in-factorygirl), it is good to write default values randomly, without using update.
 
 ### Don't overwrite `let`
 
-If you overwrite the parameters defined in `let` inside a context, it is difficult to grasp the final condition of the record so it's best to avoid this, as explained in [Don't change data with `update`](https://github.com/willnet/rspec-style-guide/README_EN.md#Don't change data with `update`)
+If you overwrite the parameters defined in `let` inside a context, it is difficult to grasp the final condition of the record so it's best to avoid this, as explained in [Don't change data with update](#dont-change-data-with-update)
 
 ```ruby
 describe Post do
