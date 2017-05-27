@@ -269,3 +269,204 @@ end
 ```
 
 This test, for example, will fail on May 1st. You won't always be able to detect bugs, but by using CI tests, you can decrease the chances of a bug sticking around for a long time.
+
+## Inserting time from an outer source
+
+[(Japanese) Cookpad Developer Blog - Concerning the scheme and implementation of it when inserting "Current Time"](http://techlife.cookpad.com/entry/2016/05/30/183947)
+
+## Differentiating `before` and `let`(`let!`)
+
+When creating an object (or record) for the basis of tests, `let`(`let!`) and `before` are used.
+
+For example there is a `scope` that has a  'User' model.
+
+```ruby
+class User < ApplicationRecord
+  scope :active, -> { where(deleted: false).where.not(confirmed_at: nil) }
+end
+```
+
+If you write this test with `let!` only, it will turn out like this:
+
+```ruby
+require 'rails_helper'
+
+Rspec.describe User, type: model do
+  describe '.active' do
+    let!(:active) { create :user, deleted: false, confirmed_at: Time.zone.now }
+    let!(:deleted_but_confirmed) { create :user, deleted: true, confirmed_at: Time.zone.now }
+    let!(:deleted_and_not_confirmed) { create :user, deleted: true, confirmed_at: nil }
+    let!(:not_deleted_but_not_confirmed) { create :user, deleted: false, confirmed_at: nil }
+
+    it 'returns active users' do
+      expect(User.active).to eq [acitve]
+    end
+  end
+end
+```
+
+If the test is written with both `let!` and `before` it will turn out like this:
+
+```ruby
+require 'rails_helper'
+
+RSpec.describe User, type: :model do
+  describe '.active' do
+    let!(:active) { create :user, deleted: false, confirmed_at: Time.zone.now }
+
+    before do
+      create :user, deleted: true, confirmed_at: Time.zone.now
+      create :user, deleted: true, confirmed_at: nil
+      create :user, deleted: false, confirmed_at: nil
+    end
+
+    it 'returns active users' do
+      expect(User.active).to eq [active]
+    end
+  end
+end
+```
+
+The latter test makes it easier to tell the difference between the object which is the return value, and everything else.
+
+※Some people might think that by adding a name to your code like `let!(:deleted_but_confirmed)` will make things easier to understand, but if the record needs to be named, just writing a comment should suffice.
+
+
+## Be reserved when keeping code DRY
+
+Some might think that making things DRY is always the best idea, but that's not the case. For example when making duplicated code abstract by processing it all as one group, depending on the situation and the way it was made abstract, there might be a higher cost than code that was originally decreased by DRY.
+
+### Think before using `shared_examples`
+
+You can deleted duplicated code by using `shared_examples`, but the way it's written can decrease the readability of the code.
+
+As an example, well use `shared_examples` to write a test for the method `Point#increase_by_day_of_the_week` which increases points only by day (of the week) which was passed as an argument. Let's define `shared_examples` in another file, and first just look at the code which will use the `shared_examples`.
+
+```ruby
+RSpec.describe Point, type :model do
+  describe '#increase_by_day_of_the_week' do
+    let(:point) { create :point, point: 0 }
+
+    it_behaves_like 'point increasing by day of the week', 100 do
+      let(:wday) { 0 }
+    end
+
+    it_behaves_like 'point increasing by day of the week', 50 do
+      let(:wday) { 1 }
+    end
+
+    it_behaves_like 'point increasing by day of the week', 30 do
+      let(:wday) { 2 }
+    end
+
+    # ...
+  end
+end
+```
+
+It's not so easy to understand what's the expected outcome by the conditions set beforehand just by looking at this.
+
+`shared_examples` is defined as follows.
+
+```ruby
+RSpec.shared_examples 'point increasing by day of the week' do |expected_point|
+  it "increases by #{expected_point}" do
+    expect(point.point).to eq 0
+    point.increase_by_day_of_the_week(wday)
+    expect(point.point).to eq expected_point
+  end
+end
+```
+
+One reason why this test is difficult to read is because the conditions to be set beforehand to create the `shared_examples` are too many.
+
+- `point`, the main object to be tested
+- `wday`, the argument to be passed to the method
+- `expected_point`, the result to be expected
+
+Also, another reason is because defining each value is a scattered process
+
+- `let(point)` is defined externally
+- `it_behaves_like` is defined through `let(wday)` inside a block
+- The second argument of `it_behaves_like` is (`expected_point`)
+
+First of all, let's incorporate suitable names to increase the readability of the code.
+
+```ruby
+RSpec.shared_examples 'point increasing by the day of the week' do |expected_point:|
+  it "increases by #{expected_point}" do
+    expect(point.point).to eq 0
+    point.increase_by_day_of_the_week(wday)
+    expect(point.point).to eq expected_point
+  end
+end
+
+RSpec.describe Point, type: :model do
+  describe '#increase_by_day_of_the_week' do
+    let(:point) { create :point, point: 0 }
+
+    context 'on sunday' do
+      let(:wday) { 0 }
+      it_behaves_like 'point increasing by day of the week', expected_point: 100
+    end
+
+    context 'on monday' do
+      let(:wday) { 1 }
+      it_behaves_like 'point increasing by day of the week', expected_point: 50
+    end
+
+    context 'on tuesday' do
+      let(:wday) { 2 }
+      it_behaves_like 'point increasing by day of the week', expected_point: 30
+    end
+
+    # ...
+  end
+end
+```
+
+By creating a new `context`, we added an explanation about `wday`. Then, by using `expected_point` as a keyword for the expected result, we've given a name to the literal integer passed as an argument, making it clear as to what the number is supposed to represent.
+
+But should is this a case where `shared_examples` should be used in the first place? If we write the test without `shared_examples`, it'll turn out like this:
+
+```ruby
+RSpec.describe Point, type: :model, do
+  describe '#increase_by_day_of_the_week' do
+    let(:point) { create :point, point: 0 }
+
+    context 'on sunday' do
+      let(:wday) { 0 }
+
+      it "increases by 100" do
+        expect(point.point).to eq 0
+        point.increase_by_day_of_the_week(wday)
+        expect(point.point).to eq 100
+      end
+    end
+
+    context 'on monday' do
+      let(:wday) { 1 }
+
+      it "increases by 50" do
+        expect(point.point).to eq 0
+        point.increase_by_day_of_the_week(wday)
+        expect(point.point).to eq 50
+      end
+    end
+
+    context 'on tuesday' do
+      let(:wday) { 2 }
+
+      it "increases by 30" do
+        expect(point.point).to eq 0
+        point.increase_by_day_of_the_week(wday)
+        expect(point.point).to eq 30
+      end
+    end
+
+    #...
+  end
+end
+```
+
+The more the conditions set beforehand and the arguments themselves increase by using `it_behaves_like`, the more complicated the code gets. The merits of being DRY and discerning whether it exceeds the complexity of the code need to be considered carefully.
