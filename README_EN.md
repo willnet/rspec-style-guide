@@ -171,7 +171,7 @@ RSpec.describe User, type: :model do
 end
 ```
 
-This code is pretty difficult to understand. In this test, the User being created depends on the 2 Posts being created as well. Also, because [update](dont-change-data-with-update) is being used to change the data, you can't really tell what state the record is in.
+This code is pretty difficult to understand. In this test, the User being created depends on the 2 Posts being created as well. Also, because [update](#dont-change-data-with-update) is being used to change the data, you can't really tell what state the record is in.
 
 To avoid this, first of all let's change the code that created the has many association record as a default.
 
