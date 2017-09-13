@@ -543,7 +543,7 @@ end
 ```
 
 
-### Don't create records that aren't needed
+## Don't create records that aren't needed
 
 As far as performance, it's best to not create a record when the test works fine without one.
 
@@ -593,7 +593,7 @@ end
 
 You can use `User.name` in a simple case like this.
 
-### Don't change data with update
+## Don't change data with update
 
 It's difficult to grasp the final condition of a column of a record created with FactoryGirl when it is changed with `update`, and it's also hard to tell which attributes the test depends on, so it's best to avoid this.
 
@@ -633,7 +633,7 @@ Can you tell immediately what attribute depends on the method 'Post#published?'?
 
 As written in [Default values in FactoryGirl](#default-values-in-factorygirl), it is good to write default values randomly, without using update.
 
-### Don't overwrite `let`
+## Don't overwrite `let`
 
 If you overwrite the parameters defined in `let` inside a context, it is difficult to grasp the final condition of the record so it's best to avoid this, as explained in [Don't change data with update](#dont-change-data-with-update)
 
@@ -672,7 +672,7 @@ describe Post do
 end
 ```
 
-### Things to watch out for when using `subject`
+## Things to watch out for when using `subject`
 
 `subject` is useful when writing an expectation on one line using `is_expected` or `should`, but there are also cases where it can have a negative effect on readability.
 
@@ -728,7 +728,7 @@ This is a lot easier to understand than when it was `expect { subject }`
 
 When `is_expected` isn't being used, it's good forget using `subject` and just write `client.save_record_from_api(params)` inside each expectation.
 
-### Avoid using `allow_any_instance_of`
+## Avoid using `allow_any_instance_of`
 
 It's also written in the [official documentation](https://relishapp.com/rspec/rspec-mocks/docs/working-with-legacy-code/any-instance), but there is a chance that the test's target design will bug out when using `allow_any_instance_of` (`expect_any_instance_of`).
 
