@@ -1,0 +1,1155 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Introduction · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="./" />
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter active" data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./#これはなに">
+            
+                    
+                    これはなに
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="./">
+            
+                <a href="./#前提">
+            
+                    
+                    前提
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="./">
+            
+                <a href="./#describeとcontext">
+            
+                    
+                    describeとcontext
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="./">
+            
+                <a href="./#FactoryGirlのデフォルト値">
+            
+                    
+                    FactoryGirlのデフォルト値
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="./">
+            
+                <a href="./#FactoryGirlで`belongs_to`以外の関連をデフォルトで作成しない">
+            
+                    
+                    FactoryGirlでbelongs_to以外の関連をデフォルトで作成しない
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="./">
+            
+                <a href="./#日時を取り扱うテストを書く">
+            
+                    
+                    日時を取り扱うテストを書く
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="./">
+            
+                <a href="./#日付を外部から注入する">
+            
+                    
+                    日付を外部から注入する
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="./">
+            
+                <a href="./#beforeとletletの使い分け">
+            
+                    
+                    beforeとlet(let!)の使い分け
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="./">
+            
+                <a href="./#控えめなdry">
+            
+                    
+                    控えめなDRY
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="./">
+            
+                <a href="./#sharedexamplesはよく考えて使う">
+            
+                    
+                    shared_examplesはよく考えて使う
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="./">
+            
+                <a href="./#スコープを考慮する">
+            
+                    
+                    スコープを考慮する
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="./">
+            
+                <a href="./#describe-外にテストデータを置かない">
+            
+                    
+                    describe 外にテストデータを置かない
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="./">
+            
+                <a href="./#各ブロックにおける前提条件の配置ルール">
+            
+                    
+                    各ブロックにおける前提条件の配置ルール
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="./">
+            
+                <a href="./#落穂拾い">
+            
+                    
+                    落穂拾い
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4" data-path="./">
+            
+                <a href="./#必要ないレコードを作らない">
+            
+                    
+                    必要ないレコードを作らない
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.5" data-path="./">
+            
+                <a href="./#updateでデータを変更しない">
+            
+                    
+                    updateでデータを変更しない
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.6" data-path="./">
+            
+                <a href="./#letを上書きしない">
+            
+                    
+                    letを上書きしない
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.7" data-path="./">
+            
+                <a href="./#subjectを使うときの注意事項">
+            
+                    
+                    subjectを使うときの注意事項
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.8" data-path="./">
+            
+                <a href="./#allowanyinstanceofを避ける">
+            
+                    
+                    allow_any_instance_ofを避ける
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Introduction</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="rspec-&#x30B9;&#x30BF;&#x30A4;&#x30EB;&#x30AC;&#x30A4;&#x30C9;"><a name="rspec-&#x30B9;&#x30BF;&#x30A4;&#x30EB;&#x30AC;&#x30A4;&#x30C9;" class="plugin-anchor" href="#rspec-&#x30B9;&#x30BF;&#x30A4;&#x30EB;&#x30AC;&#x30A4;&#x30C9;"><i class="fa fa-link" aria-hidden="true"></i></a>RSpec &#x30B9;&#x30BF;&#x30A4;&#x30EB;&#x30AC;&#x30A4;&#x30C9;</h1>
+<h2 id="&#x3053;&#x308C;&#x306F;&#x306A;&#x306B;"><a name="&#x3053;&#x308C;&#x306F;&#x306A;&#x306B;" class="plugin-anchor" href="#&#x3053;&#x308C;&#x306F;&#x306A;&#x306B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x3053;&#x308C;&#x306F;&#x306A;&#x306B;</h2>
+<p>&#x53EF;&#x8AAD;&#x6027;&#x306E;&#x9AD8;&#x3044;&#x30C6;&#x30B9;&#x30C8;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x66F8;&#x304F;&#x305F;&#x3081;&#x306E;&#x304A;&#x4F5C;&#x6CD5;&#x96C6;&#x3067;&#x3059;&#x3002;</p>
+<p>&#x307F;&#x3093;&#x306A;&#x306E;&#x610F;&#x898B;&#x3092;&#x53D6;&#x308A;&#x5165;&#x308C;&#x308B;&#x3053;&#x3068;&#x3067;&#x3088;&#x308A;&#x826F;&#x3044;&#x30AC;&#x30A4;&#x30C9;&#x306B;&#x3057;&#x3066;&#x3044;&#x304D;&#x305F;&#x3044;&#x3068;&#x601D;&#x3063;&#x3066;&#x3044;&#x308B;&#x306E;&#x3067;&#x3001;&#x6B21;&#x306B;&#x5F53;&#x3066;&#x306F;&#x307E;&#x308B;&#x5834;&#x5408;&#x306F;&#x3069;&#x3093;&#x3069;&#x3093;Issues&#x3084;Pull Request&#x3092;&#x9001;&#x3063;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;</p>
+<ul>
+<li>&#x7591;&#x554F;&#x306B;&#x601D;&#x3046;&#x70B9;&#x304C;&#x3042;&#x308B;</li>
+<li>&#x3053;&#x3053;&#x306B;&#x66F8;&#x304B;&#x308C;&#x3066;&#x3044;&#x306A;&#x3044;&#x304A;&#x4F5C;&#x6CD5;&#x304C;&#x3042;&#x308B;</li>
+<li>&#x5185;&#x5BB9;&#x306F;&#x3044;&#x3044;&#x3051;&#x3069;&#x8868;&#x73FE;&#x304C;&#x304A;&#x304B;&#x3057;&#x3044;</li>
+<li>&#x3082;&#x3063;&#x3068;&#x3044;&#x3044;&#x30B5;&#x30F3;&#x30D7;&#x30EB;&#x30B3;&#x30FC;&#x30C9;&#x304C;&#x3042;&#x308B;</li>
+</ul>
+<p><a href="https://github.com/willnet/rspec-style-guide/blob/master/README_EN.md" target="_blank">English Version</a></p>
+<h2 id="&#x524D;&#x63D0;"><a name="&#x524D;&#x63D0;" class="plugin-anchor" href="#&#x524D;&#x63D0;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x524D;&#x63D0;</h2>
+<ul>
+<li>RSpec</li>
+<li>FactoryGirl</li>
+</ul>
+<h2 id="describe&#x3068;context"><a name="describe&#x3068;context" class="plugin-anchor" href="#describe&#x3068;context"><i class="fa fa-link" aria-hidden="true"></i></a>describe&#x3068;context</h2>
+<p><code>describe</code>&#x3068;<code>context</code>&#x306F;&#x540C;&#x3058;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3060;&#x304C;&#x3001;&#x6B21;&#x306E;&#x3088;&#x3046;&#x306B;&#x4F7F;&#x3044;&#x5206;&#x3051;&#x308B;&#x3053;&#x3068;&#x3067;&#x4F55;&#x3092;&#x30C6;&#x30B9;&#x30C8;&#x3057;&#x3066;&#x3044;&#x308B;&#x306E;&#x304B;&#x3092;&#x308F;&#x304B;&#x308A;&#x3084;&#x3059;&#x304F;&#x3067;&#x304D;&#x308B;&#x3002;</p>
+<ul>
+<li>describe &#x306E;&#x5F15;&#x6570;&#x306B;&#x306F;&#x30C6;&#x30B9;&#x30C8;&#x306E;&#x5BFE;&#x8C61;&#x3092;&#x66F8;&#x304F;</li>
+<li>context &#x306E;&#x5F15;&#x6570;&#x306B;&#x306F;&#x30C6;&#x30B9;&#x30C8;&#x304C;&#x5B9F;&#x884C;&#x3055;&#x308C;&#x308B;&#x969B;&#x306B;&#x524D;&#x63D0;&#x306B;&#x306A;&#x308B;&#x6761;&#x4EF6;&#x3084;&#x72B6;&#x614B;&#x3092;&#x66F8;&#x304F;</li>
+</ul>
+<h3 id="&#x4F8B;"><a name="&#x4F8B;" class="plugin-anchor" href="#&#x4F8B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4F8B;</h3>
+<pre><code class="lang-ruby">describe Stack <span class="hljs-keyword">do</span>
+  let!(<span class="hljs-symbol">:stack</span>) { Stack.new }
+
+  describe <span class="hljs-string">&apos;#push&apos;</span> <span class="hljs-keyword">do</span>
+    context <span class="hljs-string">&apos;&#x6587;&#x5B57;&#x5217;&#x3092;push&#x3057;&#x305F;&#x3068;&#x304D;&apos;</span> <span class="hljs-keyword">do</span>
+      before { stack.push(<span class="hljs-string">&apos;value&apos;</span>) }
+
+      it <span class="hljs-string">&apos;&#x8FD4;&#x308A;&#x5024;&#x304C;push&#x3057;&#x305F;&#x5024;&#x3067;&#x3042;&#x308B;&#x3053;&#x3068;&apos;</span> <span class="hljs-keyword">do</span>
+        expect(stack).to eq <span class="hljs-string">&apos;value&apos;</span>
+      <span class="hljs-keyword">end</span>
+    <span class="hljs-keyword">end</span>
+
+    context <span class="hljs-string">&apos;nil&#x3092;push&#x3057;&#x305F;&#x5834;&#x5408;&apos;</span> <span class="hljs-keyword">do</span>
+      it <span class="hljs-string">&apos;ArgumentError&#x306B;&#x306A;&#x308B;&#x3053;&#x3068;&apos;</span> <span class="hljs-keyword">do</span>
+        expect { stack.push(<span class="hljs-keyword">nil</span>) }.to raise_error(ArgumentError)
+      <span class="hljs-keyword">end</span>
+    <span class="hljs-keyword">end</span>
+  <span class="hljs-keyword">end</span>
+
+  describe <span class="hljs-string">&apos;#pop&apos;</span> <span class="hljs-keyword">do</span>
+    context <span class="hljs-string">&apos;&#x30B9;&#x30BF;&#x30C3;&#x30AF;&#x304C;&#x7A7A;&#x306E;&#x5834;&#x5408;&apos;</span> <span class="hljs-keyword">do</span>
+      it <span class="hljs-string">&apos;&#x8FD4;&#x308A;&#x5024;&#x306F;nil&#x3067;&#x3042;&#x308B;&#x3053;&#x3068;&apos;</span> <span class="hljs-keyword">do</span>        
+        expect(stack.pop).to be_nil
+      <span class="hljs-keyword">end</span>
+    <span class="hljs-keyword">end</span>
+
+    context <span class="hljs-string">&apos;&#x30B9;&#x30BF;&#x30C3;&#x30AF;&#x306B;&#x5024;&#x304C;&#x3042;&#x308B;&#x3068;&#x304D;&apos;</span> <span class="hljs-keyword">do</span>
+      before <span class="hljs-keyword">do</span>
+        stack.push <span class="hljs-string">&apos;value1&apos;</span>
+        stack.push <span class="hljs-string">&apos;value2&apos;</span>        
+      <span class="hljs-keyword">end</span>
+
+      it <span class="hljs-string">&apos;&#x6700;&#x5F8C;&#x306E;&#x5024;&#x3092;&#x53D6;&#x5F97;&#x3059;&#x308B;&#x3053;&#x3068;&apos;</span> <span class="hljs-keyword">do</span>
+        expect(stack.pop).to eq <span class="hljs-string">&apos;value2&apos;</span>
+      <span class="hljs-keyword">end</span>
+    <span class="hljs-keyword">end</span>
+  <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+</code></pre>
+<h2 id="factorygirl&#x306E;&#x30C7;&#x30D5;&#x30A9;&#x30EB;&#x30C8;&#x5024;"><a name="factorygirl&#x306E;&#x30C7;&#x30D5;&#x30A9;&#x30EB;&#x30C8;&#x5024;" class="plugin-anchor" href="#factorygirl&#x306E;&#x30C7;&#x30D5;&#x30A9;&#x30EB;&#x30C8;&#x5024;"><i class="fa fa-link" aria-hidden="true"></i></a>FactoryGirl&#x306E;&#x30C7;&#x30D5;&#x30A9;&#x30EB;&#x30C8;&#x5024;</h2>
+<p>FactoryGirl&#x3092;&#x5229;&#x7528;&#x3057;&#x305F;&#x5834;&#x5408;&#x3001;&#x5404;&#x30E2;&#x30C7;&#x30EB;&#x306E;&#x30C7;&#x30D5;&#x30A9;&#x30EB;&#x30C8;&#x306E;&#x30AB;&#x30E9;&#x30E0;&#x5024;&#x3092;&#x8A2D;&#x5B9A;&#x3059;&#x308B;&#x3053;&#x3068;&#x306B;&#x306A;&#x308B;&#x3002;&#x3053;&#x306E;&#x3068;&#x304D;&#x3001;&#x5404;&#x30AB;&#x30E9;&#x30E0;&#x306E;&#x5024;&#x304C;&#x3059;&#x3079;&#x3066;&#x30E9;&#x30F3;&#x30C0;&#x30E0;&#x5024;&#x3068;&#x306A;&#x308B;&#x3088;&#x3046;&#x306B;&#x8A2D;&#x5B9A;&#x3092;&#x66F8;&#x304F;&#x3068;&#x3088;&#x3044;&#x3002;&#x305D;&#x306E;&#x4E0A;&#x3067;&#x3001;&#x5FC5;&#x8981;&#x306A;&#x5024;&#x306E;&#x307F;&#x3092;&#x30C6;&#x30B9;&#x30C8;&#x4E2D;&#x3067;&#x660E;&#x793A;&#x7684;&#x306B;&#x6307;&#x5B9A;&#x3059;&#x308B;&#x3053;&#x3068;&#x306B;&#x3088;&#x308A;&#x3001;&#x300C;&#x3053;&#x306E;&#x30C6;&#x30B9;&#x30C8;&#x3067;&#x91CD;&#x8981;&#x306A;&#x5024;&#x306F;&#x306A;&#x306B;&#x304B;&#x300D;&#x304C;&#x308F;&#x304B;&#x308A;&#x3084;&#x3059;&#x304F;&#x306A;&#x308B;&#x3002;</p>
+<h3 id="&#x3088;&#x304F;&#x306A;&#x3044;&#x4F8B;"><a name="&#x3088;&#x304F;&#x306A;&#x3044;&#x4F8B;" class="plugin-anchor" href="#&#x3088;&#x304F;&#x306A;&#x3044;&#x4F8B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x3088;&#x304F;&#x306A;&#x3044;&#x4F8B;</h3>
+<p>&#x30A2;&#x30AB;&#x30A6;&#x30F3;&#x30C8;&#x304C;&#x6709;&#x52B9;&#x5316;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x304B;&#x3069;&#x3046;&#x304B;&#x3092;active&#x30AB;&#x30E9;&#x30E0;&#x3067;&#x7BA1;&#x7406;&#x3057;&#x3066;&#x3044;&#x308B;&#x3068;&#x3059;&#x308B;&#x3002;&#x3053;&#x306E;&#x3088;&#x3046;&#x306A;&#x3001;&#x6709;&#x52B9;&#xFF0F;&#x7121;&#x52B9;&#x3092;&#x8868;&#x3059;&#x30AB;&#x30E9;&#x30E0;&#x304C;&#x56FA;&#x5B9A;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x30B1;&#x30FC;&#x30B9;&#x306F;&#x3088;&#x304F;&#x898B;&#x304B;&#x3051;&#x308B;&#x3002;</p>
+<pre><code class="lang-ruby">FactoryGirl.define <span class="hljs-keyword">do</span>
+  factory <span class="hljs-symbol">:user</span> <span class="hljs-keyword">do</span>
+    name <span class="hljs-string">&apos;willnet&apos;</span>
+    active <span class="hljs-keyword">true</span>
+  <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+</code></pre>
+<pre><code class="lang-ruby">describe User, <span class="hljs-symbol">type:</span> <span class="hljs-symbol">:model</span> <span class="hljs-keyword">do</span>
+  describe <span class="hljs-string">&apos;#send_message&apos;</span> <span class="hljs-keyword">do</span>
+    let!(<span class="hljs-symbol">:sender</span>) { create <span class="hljs-symbol">:user</span>, <span class="hljs-symbol">name:</span> <span class="hljs-string">&apos;maeshima&apos;</span> }
+    let!(<span class="hljs-symbol">:receiver</span>) { create <span class="hljs-symbol">:user</span>, <span class="hljs-symbol">name:</span> <span class="hljs-string">&apos;kamiya&apos;</span> }
+
+    it <span class="hljs-string">&apos;&#x30E1;&#x30C3;&#x30BB;&#x30FC;&#x30B8;&#x304C;&#x6B63;&#x3057;&#x304F;&#x9001;&#x3089;&#x308C;&#x308B;&#x3053;&#x3068;&apos;</span> <span class="hljs-keyword">do</span>
+      expect { sender.send_message(<span class="hljs-symbol">receiver:</span> receiver, <span class="hljs-symbol">body:</span> <span class="hljs-string">&apos;hello!&apos;</span>) }
+        .to change { Message.count }.by(<span class="hljs-number">1</span>)
+    <span class="hljs-keyword">end</span>
+  <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+</code></pre>
+<p>&#x3053;&#x306E;&#x30C6;&#x30B9;&#x30C8;&#x306F;<code>User#active</code>&#x304C;<code>true</code>&#x3067;&#x3042;&#x308B;&#x3053;&#x3068;&#x304C;&#x6697;&#x9ED9;&#x7684;&#x306A;&#x6761;&#x4EF6;&#x306B;&#x306A;&#x3063;&#x3066;&#x3057;&#x307E;&#x3063;&#x3066;&#x3044;&#x308B;&#x3002;<code>sender.active #=&gt; false</code>&#x306E;&#x3068;&#x304D;&#x3084;<code>receiver.active #=&gt; false</code>&#x306E;&#x3068;&#x304D;&#x306B;&#x3069;&#x3046;&#x632F;&#x308B;&#x821E;&#x3046;&#x304B;&#x3092;&#x4F1D;&#x3048;&#x308B;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x3066;&#x3044;&#x306A;&#x3044;&#x3002;</p>
+<p>&#x3055;&#x3089;&#x306B;&#x3001;&#x3053;&#x306E;&#x30C6;&#x30B9;&#x30C8;&#x3067;&#x306F;<code>name</code>&#x3092;&#x660E;&#x793A;&#x7684;&#x306B;&#x6307;&#x5B9A;&#x3057;&#x3066;&#x3044;&#x308B;&#x304C;&#x3053;&#x308C;&#x306F;&#x5FC5;&#x8981;&#x306A;&#x6307;&#x5B9A;&#x306A;&#x306E;&#x3060;&#x308D;&#x3046;&#x304B;&#xFF1F;&#x30C6;&#x30B9;&#x30C8;&#x3092;&#x8AAD;&#x3080;&#x4EBA;&#x306B;&#x4F59;&#x8A08;&#x306A;&#x30EA;&#x30BD;&#x30FC;&#x30B9;&#x3092;&#x6D88;&#x8CBB;&#x3055;&#x305B;&#x3066;&#x3057;&#x307E;&#x3046;&#x3001;&#x7121;&#x99C4;&#x306A;&#x30C7;&#x30FC;&#x30BF;&#x6307;&#x5B9A;&#x306F;&#x306A;&#x308B;&#x3079;&#x304F;&#x907F;&#x3051;&#x308B;&#x306E;&#x304C;&#x597D;&#x307E;&#x3057;&#x3044;&#x3002;</p>
+<h3 id="&#x3088;&#x3044;&#x4F8B;"><a name="&#x3088;&#x3044;&#x4F8B;" class="plugin-anchor" href="#&#x3088;&#x3044;&#x4F8B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x3088;&#x3044;&#x4F8B;</h3>
+<pre><code class="lang-ruby">FactoryGirl.define <span class="hljs-keyword">do</span>
+  factory <span class="hljs-symbol">:user</span> <span class="hljs-keyword">do</span>
+    sequence(<span class="hljs-symbol">:name</span>) { |i| <span class="hljs-string">&quot;test<span class="hljs-subst">#{i}</span>&quot;</span>}
+    active { [<span class="hljs-keyword">true</span>, <span class="hljs-keyword">false</span>].sample }
+  <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+</code></pre>
+<pre><code class="lang-ruby">describe User, <span class="hljs-symbol">type:</span> <span class="hljs-symbol">:model</span> <span class="hljs-keyword">do</span>
+  describe <span class="hljs-string">&apos;#send_message&apos;</span> <span class="hljs-keyword">do</span>
+    let!(<span class="hljs-symbol">:sender</span>) { create <span class="hljs-symbol">:user</span> }
+    let!(<span class="hljs-symbol">:receiver</span>) { create <span class="hljs-symbol">:user</span> }
+
+    it <span class="hljs-string">&apos;&#x30E1;&#x30C3;&#x30BB;&#x30FC;&#x30B8;&#x304C;&#x6B63;&#x3057;&#x304F;&#x9001;&#x3089;&#x308C;&#x308B;&#x3053;&#x3068;&apos;</span> <span class="hljs-keyword">do</span>
+      expect { sender.send_message(<span class="hljs-symbol">receiver:</span> receiver, <span class="hljs-symbol">body:</span> <span class="hljs-string">&apos;hello!&apos;</span>) }
+        .to change { Message.count }.by(<span class="hljs-number">1</span>)
+    <span class="hljs-keyword">end</span>
+  <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+</code></pre>
+<p>&#x3053;&#x306E;&#x30C6;&#x30B9;&#x30C8;&#x3060;&#x3068;&#x300C;<code>User#active</code>&#x306E;&#x623B;&#x308A;&#x5024;&#x304C;<code>User#send_message</code>&#x306E;&#x52D5;&#x4F5C;&#x306B;&#x5F71;&#x97FF;&#x3057;&#x306A;&#x3044;&#x300D;&#x3068;&#x3044;&#x3046;&#x3053;&#x3068;&#x304C;(&#x6697;&#x9ED9;&#x7684;&#x306B;&#x3067;&#x3042;&#x308B;&#x304C;)&#x4F1D;&#x308F;&#x308B;&#x3002;&#x3082;&#x3057;<code>User#active</code>&#x304C;&#x5F71;&#x97FF;&#x3059;&#x308B;&#x3088;&#x3046;&#x306A;&#x4FEE;&#x6B63;&#x304C;&#x52A0;&#x3048;&#x3089;&#x308C;&#x305F;&#x5834;&#x5408;&#x3001;CI&#x3067;&#x6642;&#x3005;&#x30C6;&#x30B9;&#x30C8;&#x304C;&#x5931;&#x6557;&#x3059;&#x308B;&#x3053;&#x3068;&#x306B;&#x3088;&#x3063;&#x3066;&#x3001;&#x30C6;&#x30B9;&#x30C8;&#x304C;&#x58CA;&#x308C;&#x305F;&#x3053;&#x3068;&#x306B;&#x6C17;&#x4ED8;&#x3051;&#x308B;&#x306F;&#x305A;&#x3060;&#x3002;</p>
+<h2 id="factorygirl&#x3067;belongsto&#x4EE5;&#x5916;&#x306E;&#x95A2;&#x9023;&#x3092;&#x30C7;&#x30D5;&#x30A9;&#x30EB;&#x30C8;&#x3067;&#x4F5C;&#x6210;&#x3057;&#x306A;&#x3044;"><a name="factorygirl&#x3067;belongsto&#x4EE5;&#x5916;&#x306E;&#x95A2;&#x9023;&#x3092;&#x30C7;&#x30D5;&#x30A9;&#x30EB;&#x30C8;&#x3067;&#x4F5C;&#x6210;&#x3057;&#x306A;&#x3044;" class="plugin-anchor" href="#factorygirl&#x3067;belongsto&#x4EE5;&#x5916;&#x306E;&#x95A2;&#x9023;&#x3092;&#x30C7;&#x30D5;&#x30A9;&#x30EB;&#x30C8;&#x3067;&#x4F5C;&#x6210;&#x3057;&#x306A;&#x3044;"><i class="fa fa-link" aria-hidden="true"></i></a>FactoryGirl&#x3067;<code>belongs_to</code>&#x4EE5;&#x5916;&#x306E;&#x95A2;&#x9023;&#x3092;&#x30C7;&#x30D5;&#x30A9;&#x30EB;&#x30C8;&#x3067;&#x4F5C;&#x6210;&#x3057;&#x306A;&#x3044;</h2>
+<p>FactoryGirl&#x3067;&#x30E2;&#x30C7;&#x30EB;&#x3092;&#x4F5C;&#x6210;&#x3059;&#x308B;&#x969B;&#x306B;&#x3001;&#x95A2;&#x9023;&#x3057;&#x3066;&#x3044;&#x308B;&#x30E2;&#x30C7;&#x30EB;&#x3082;&#x540C;&#x6642;&#x306B;&#x4F5C;&#x6210;&#x3059;&#x308B;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x308B;&#x3002;</p>
+<p>&#x5BFE;&#x8C61;&#x306E;&#x95A2;&#x9023;&#x304C;belongs_to&#x3067;&#x3042;&#x308C;&#x3070;&#x7279;&#x306B;&#x554F;&#x984C;&#x306F;&#x306A;&#x3044;&#x304C;&#x3001;has_many&#x306E;&#x95A2;&#x9023;&#x3092;&#x6271;&#x3046;&#x5834;&#x5408;&#x306B;&#x306F;&#x6CE8;&#x610F;&#x304C;&#x5FC5;&#x8981;&#x306B;&#x306A;&#x308B;&#x3002;</p>
+<p>&#x4F8B;&#x3068;&#x3057;&#x3066;&#x3001;User&#x3068;Post&#x304C;&#x4E00;&#x5BFE;&#x591A;&#x3060;&#x3063;&#x305F;&#x3068;&#x3057;&#x3066;FactoryGirl&#x3067;&#x306E;&#x5B9A;&#x7FA9;&#x3092;&#x66F8;&#x3044;&#x3066;&#x307F;&#x308B;&#x3002;</p>
+<pre><code class="lang-ruby">FactoryGirl.define <span class="hljs-keyword">do</span>
+  factory <span class="hljs-symbol">:user</span> <span class="hljs-keyword">do</span>
+    sequence(<span class="hljs-symbol">:name</span>) { |i| <span class="hljs-string">&quot;username<span class="hljs-subst">#{i}</span>&quot;</span> }
+
+    after(<span class="hljs-symbol">:create</span>) <span class="hljs-keyword">do</span> |user, evaluator|
+      create_list(<span class="hljs-symbol">:post</span>, <span class="hljs-number">2</span>, <span class="hljs-symbol">user:</span> user)
+    <span class="hljs-keyword">end</span>
+  <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+</code></pre>
+<p><code>after(:create)</code>&#x3092;&#x4F7F;&#x3044;&#x3001;User&#x304C;&#x4F5C;&#x6210;&#x3055;&#x308C;&#x305F;&#x969B;&#x306B;&#x95A2;&#x9023;&#x3059;&#x308B;Post&#x3082;&#x4F5C;&#x6210;&#x3055;&#x308C;&#x308B;&#x3088;&#x3046;&#x306B;&#x3057;&#x305F;&#x3002;&#x3053;&#x306E;&#x5B9A;&#x7FA9;&#x3092;&#x7528;&#x3044;&#x3066;User&#x304C;&#x6295;&#x7A3F;&#x3057;&#x305F;Post&#x306E;&#x3046;&#x3061;&#x3001;&#x4EBA;&#x6C17;&#x9806;&#x3067;&#x8FD4;&#x3059;<code>User#posts_ordered_by_popularity</code>&#x306E;&#x30C6;&#x30B9;&#x30C8;&#x3092;&#x66F8;&#x3044;&#x3066;&#x307F;&#x308B;&#x3002;</p>
+<pre><code class="lang-ruby">RSpec.describe User, <span class="hljs-symbol">type:</span> <span class="hljs-symbol">:model</span> <span class="hljs-keyword">do</span>
+  describe <span class="hljs-string">&apos;#posts_ordered_by_popularity&apos;</span> <span class="hljs-keyword">do</span>
+    let!(<span class="hljs-symbol">:user</span>) { create(<span class="hljs-symbol">:user</span>) }
+    let!(<span class="hljs-symbol">:post_popular</span>) <span class="hljs-keyword">do</span>
+      post = user.posts[<span class="hljs-number">0</span>]
+      post.update(<span class="hljs-symbol">popularity:</span> <span class="hljs-number">5</span>)
+      post
+    <span class="hljs-keyword">end</span>
+    let!(<span class="hljs-symbol">:post_not_popular</span>) <span class="hljs-keyword">do</span>
+      post = user.posts[<span class="hljs-number">1</span>]
+      post.update(<span class="hljs-symbol">popularity:</span> <span class="hljs-number">1</span>)
+      post
+    <span class="hljs-keyword">end</span>
+
+    it <span class="hljs-string">&apos;return posts ordered by populality&apos;</span> <span class="hljs-keyword">do</span>
+      expect(user.posts_ordered_by_popularity).to eq [post_popular, post_not_popular]
+    <span class="hljs-keyword">end</span>
+  <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+</code></pre>
+<p>&#x7406;&#x89E3;&#x3057;&#x3065;&#x3089;&#x3044;&#x30C6;&#x30B9;&#x30C8;&#x30B3;&#x30FC;&#x30C9;&#x306B;&#x306A;&#x3063;&#x305F;&#x3002;&#x3053;&#x306E;&#x30C6;&#x30B9;&#x30C8;&#x306F;User&#x306E;&#x30EC;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x4F5C;&#x6210;&#x3057;&#x305F;&#x6642;&#x306B;&#x3001;&#x95A2;&#x9023;&#x3059;&#x308B;Post&#x3092;2&#x3064;&#x4F5C;&#x6210;&#x3059;&#x308B;&#x3053;&#x3068;&#x306B;&#x4F9D;&#x5B58;&#x3057;&#x3066;&#x3044;&#x308B;&#x3002;&#x307E;&#x305F;&#x3001;<a href="https://github.com/willnet/rspec-style-guide#update&#x3067;&#x30C7;&#x30FC;&#x30BF;&#x3092;&#x5909;&#x66F4;&#x3057;&#x306A;&#x3044;" target="_blank">update</a>&#x3092;&#x5229;&#x7528;&#x3057;&#x3066;&#x30C7;&#x30FC;&#x30BF;&#x3092;&#x5909;&#x66F4;&#x3057;&#x3066;&#x3044;&#x308B;&#x305F;&#x3081;&#x3001;&#x6700;&#x7D42;&#x7684;&#x306A;&#x30EC;&#x30B3;&#x30FC;&#x30C9;&#x306E;&#x72B6;&#x614B;&#x3092;&#x628A;&#x63E1;&#x3057;&#x3065;&#x3089;&#x304F;&#x306A;&#x3063;&#x3066;&#x3044;&#x308B;&#x3002;</p>
+<p>&#x3053;&#x308C;&#x3092;&#x907F;&#x3051;&#x308B;&#x306B;&#x306F;&#x3001;&#x307E;&#x305A;&#x3001;&#x30C7;&#x30D5;&#x30A9;&#x30EB;&#x30C8;&#x3067;&#x4E00;&#x5BFE;&#x591A;&#x306E;&#x95A2;&#x9023;&#x30EC;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x4F5C;&#x6210;&#x3059;&#x308B;&#x3053;&#x3068;&#x3092;&#x3084;&#x3081;&#x308B;&#x3068;&#x3088;&#x3044;&#x3002;</p>
+<pre><code class="lang-ruby">FactoryGirl.define <span class="hljs-keyword">do</span>
+  factory <span class="hljs-symbol">:user</span> <span class="hljs-keyword">do</span>
+    sequence(<span class="hljs-symbol">:name</span>) { |i| <span class="hljs-string">&quot;username<span class="hljs-subst">#{i}</span>&quot;</span> }
+
+    trait(<span class="hljs-symbol">:with_posts</span>) <span class="hljs-keyword">do</span>
+      after(<span class="hljs-symbol">:create</span>) <span class="hljs-keyword">do</span> |user, evaluator|
+        create_list(<span class="hljs-symbol">:post</span>, <span class="hljs-number">2</span>, <span class="hljs-symbol">user:</span> user)
+      <span class="hljs-keyword">end</span>
+    <span class="hljs-keyword">end</span>
+  <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+</code></pre>
+<p><code>trait</code>&#x3092;&#x5229;&#x7528;&#x3057;&#x3001;&#x30C7;&#x30D5;&#x30A9;&#x30EB;&#x30C8;&#x3067;&#x306F;Post&#x3092;&#x4F5C;&#x6210;&#x3057;&#x306A;&#x3044;&#x3088;&#x3046;&#x306B;&#x3057;&#x305F;&#x3002;&#x3069;&#x3093;&#x306A;&#x5024;&#x3067;&#x3082;&#x826F;&#x3044;&#x306E;&#x3067;&#x95A2;&#x9023;&#x5148;&#x306E;Post&#x304C;&#x307B;&#x3057;&#x3044;&#x3068;&#x304D;&#x306B;&#x306F;trait&#x3092;&#x6307;&#x5B9A;&#x3057;User&#x3092;&#x4F5C;&#x6210;&#x3059;&#x308C;&#x3070;&#x826F;&#x3044;&#x3002;</p>
+<p>&#x95A2;&#x9023;&#x5148;&#x306F;&#x30C6;&#x30B9;&#x30C8;&#x4E2D;&#x3067;&#x660E;&#x793A;&#x7684;&#x306B;&#x4F5C;&#x6210;&#x3059;&#x308B;&#x3088;&#x3046;&#x306B;&#x3059;&#x308B;&#x3002;</p>
+<pre><code class="lang-ruby">RSpec.describe User, <span class="hljs-symbol">type:</span> <span class="hljs-symbol">:model</span> <span class="hljs-keyword">do</span>
+  describe <span class="hljs-string">&apos;#posts_ordered_by_popularity&apos;</span> <span class="hljs-keyword">do</span>
+    let!(<span class="hljs-symbol">:user</span>) { create(<span class="hljs-symbol">:user</span>) }
+    let!(<span class="hljs-symbol">:post_popular</span>) { create <span class="hljs-symbol">:post</span>, <span class="hljs-symbol">user:</span> user, <span class="hljs-symbol">popularity:</span> <span class="hljs-number">5</span> }
+    let!(<span class="hljs-symbol">:post_not_popular</span>) { create <span class="hljs-symbol">:post</span>, <span class="hljs-symbol">user:</span> user, <span class="hljs-symbol">popularity:</span> <span class="hljs-number">1</span> }
+
+    it <span class="hljs-string">&apos;return posts ordered by populality&apos;</span> <span class="hljs-keyword">do</span>
+      expect(user.posts_ordered_by_popularity).to eq [post_popular, post_not_popular]
+    <span class="hljs-keyword">end</span>
+  <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+</code></pre>
+<p>&#x3053;&#x308C;&#x3067;&#x3001;&#x6700;&#x521D;&#x306E;&#x4F8B;&#x3088;&#x308A;&#x3060;&#x3044;&#x3076;&#x898B;&#x3084;&#x3059;&#x304F;&#x306A;&#x3063;&#x305F;&#x3002;</p>
+<h2 id="&#x65E5;&#x6642;&#x3092;&#x53D6;&#x308A;&#x6271;&#x3046;&#x30C6;&#x30B9;&#x30C8;&#x3092;&#x66F8;&#x304F;"><a name="&#x65E5;&#x6642;&#x3092;&#x53D6;&#x308A;&#x6271;&#x3046;&#x30C6;&#x30B9;&#x30C8;&#x3092;&#x66F8;&#x304F;" class="plugin-anchor" href="#&#x65E5;&#x6642;&#x3092;&#x53D6;&#x308A;&#x6271;&#x3046;&#x30C6;&#x30B9;&#x30C8;&#x3092;&#x66F8;&#x304F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x65E5;&#x6642;&#x3092;&#x53D6;&#x308A;&#x6271;&#x3046;&#x30C6;&#x30B9;&#x30C8;&#x3092;&#x66F8;&#x304F;</h2>
+<p>&#x65E5;&#x6642;&#x3092;&#x53D6;&#x308A;&#x6271;&#x3046;&#x30C6;&#x30B9;&#x30C8;&#x3092;&#x66F8;&#x304F;&#x5834;&#x5408;&#x3001;&#x7D76;&#x5BFE;&#x6642;&#x9593;&#x3092;&#x4F7F;&#x3046;&#x5FC5;&#x8981;&#x304C;&#x306A;&#x3044;&#x30B1;&#x30FC;&#x30B9;&#x3067;&#x3042;&#x308C;&#x3070;&#x306A;&#x308B;&#x3079;&#x304F;&#x73FE;&#x5728;&#x65E5;&#x6642;&#x304B;&#x3089;&#x306E;&#x76F8;&#x5BFE;&#x6642;&#x9593;&#x3092;&#x5229;&#x7528;&#x3059;&#x308B;&#x306E;&#x304C;&#x826F;&#x3044;&#x3002;&#x305D;&#x306E;&#x65B9;&#x304C;&#x5B9F;&#x88C5;&#x306E;&#x4E0D;&#x5177;&#x5408;&#x306B;&#x6C17;&#x3065;&#x3051;&#x308B;&#x53EF;&#x80FD;&#x6027;&#x304C;&#x5897;&#x3059;&#x304B;&#x3089;&#x3060;&#x3002;</p>
+<p>&#x4F8B;&#x3068;&#x3057;&#x3066;&#x3001;&#x5148;&#x6708;&#x306B;&#x516C;&#x958B;&#x3055;&#x308C;&#x305F;&#x6295;&#x7A3F;&#x3092;&#x53D6;&#x5F97;&#x3059;&#x308B;scope&#x3068;&#x3001;&#x305D;&#x306E;&#x30C6;&#x30B9;&#x30C8;&#x3092;&#x7D76;&#x5BFE;&#x6642;&#x9593;&#x3092;&#x7528;&#x3044;&#x3066;&#x8A18;&#x8FF0;&#x3059;&#x308B;&#x3002;</p>
+<pre><code class="lang-ruby"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Post</span> &lt; ApplicationRecord</span>
+  scope <span class="hljs-symbol">:last_month_published</span>, -&gt; { where(<span class="hljs-symbol">publish_at:</span> (Time.zone.now - <span class="hljs-number">31</span>.days).all_month) }
+<span class="hljs-keyword">end</span>
+</code></pre>
+<pre><code class="lang-ruby"><span class="hljs-keyword">require</span> <span class="hljs-string">&apos;rails_helper&apos;</span>
+
+RSpec.describe Post, <span class="hljs-symbol">type:</span> <span class="hljs-symbol">:model</span> <span class="hljs-keyword">do</span>
+  describe <span class="hljs-string">&apos;.last_month_published&apos;</span> <span class="hljs-keyword">do</span>
+    let!(<span class="hljs-symbol">:april_1st</span>) { create <span class="hljs-symbol">:post</span>, <span class="hljs-symbol">publish_at:</span> Time.zone.local(<span class="hljs-number">2017</span>, <span class="hljs-number">4</span>, <span class="hljs-number">1</span>) }
+    let!(<span class="hljs-symbol">:april_30th</span>) { create <span class="hljs-symbol">:post</span>, <span class="hljs-symbol">publish_at:</span> Time.zone.local(<span class="hljs-number">2017</span>, <span class="hljs-number">4</span>, <span class="hljs-number">30</span>) }
+
+    before <span class="hljs-keyword">do</span>
+      create <span class="hljs-symbol">:post</span>, <span class="hljs-symbol">publish_at:</span> Time.zone.local(<span class="hljs-number">2017</span>, <span class="hljs-number">5</span>, <span class="hljs-number">1</span>)
+      create <span class="hljs-symbol">:post</span>, <span class="hljs-symbol">publish_at:</span> Time.zone.local(<span class="hljs-number">2017</span>, <span class="hljs-number">3</span>, <span class="hljs-number">31</span>)
+    <span class="hljs-keyword">end</span>
+
+    it <span class="hljs-string">&apos;return published posts in last month&apos;</span> <span class="hljs-keyword">do</span>
+      Timecop.travel(<span class="hljs-number">2017</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>) <span class="hljs-keyword">do</span>
+        expect(Post.last_month_published).to contain_exactly(april_1st, april_30th)
+      <span class="hljs-keyword">end</span>
+    <span class="hljs-keyword">end</span>
+  <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+</code></pre>
+<p>&#x3053;&#x306E;&#x30C6;&#x30B9;&#x30C8;&#x306F;&#x5E38;&#x306B;&#x6210;&#x529F;&#x3059;&#x308B;&#x304C;&#x3001;&#x5B9F;&#x88C5;&#x306B;&#x306F;&#x30D0;&#x30B0;&#x304C;&#x542B;&#x307E;&#x308C;&#x3066;&#x3044;&#x308B;&#x3002;</p>
+<p>&#x30C6;&#x30B9;&#x30C8;&#x3092;&#x76F8;&#x5BFE;&#x65E5;&#x6642;&#x306B;&#x5909;&#x66F4;&#x3057;&#x3066;&#x307F;&#x308B;&#x3002;</p>
+<pre><code class="lang-ruby"><span class="hljs-keyword">require</span> <span class="hljs-string">&apos;rails_helper&apos;</span>
+
+RSpec.describe Post, <span class="hljs-symbol">type:</span> <span class="hljs-symbol">:model</span> <span class="hljs-keyword">do</span>
+  describe <span class="hljs-string">&apos;.last_month_published&apos;</span> <span class="hljs-keyword">do</span>
+    let!(<span class="hljs-symbol">:now</span>) { Time.zone.now }
+    let!(<span class="hljs-symbol">:last_beginning_of_month</span>) { create <span class="hljs-symbol">:post</span>, <span class="hljs-symbol">publish_at:</span> <span class="hljs-number">1</span>.month.ago(now).beginning_of_month }
+    let!(<span class="hljs-symbol">:last_end_of_month</span>) { create <span class="hljs-symbol">:post</span>, <span class="hljs-symbol">publish_at:</span> <span class="hljs-number">1</span>.month.ago(now).end_of_month  }
+
+    before <span class="hljs-keyword">do</span>
+      create <span class="hljs-symbol">:post</span>, <span class="hljs-symbol">publish_at:</span> now
+      create <span class="hljs-symbol">:post</span>, <span class="hljs-symbol">publish_at:</span> <span class="hljs-number">2</span>.months.ago(now)
+    <span class="hljs-keyword">end</span>
+
+    it <span class="hljs-string">&apos;return published posts in last month&apos;</span> <span class="hljs-keyword">do</span>
+      expect(Post.last_month_published).to contain_exactly(last_beginning_of_month, last_end_of_month)
+    <span class="hljs-keyword">end</span>
+  <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+</code></pre>
+<p>&#x3053;&#x306E;&#x30C6;&#x30B9;&#x30C8;&#x306F;&#x3001;&#x4F8B;&#x3048;&#x3070;3&#x6708;1&#x65E5;&#x306B;&#x5B9F;&#x884C;&#x3059;&#x308B;&#x3068;&#x5931;&#x6557;&#x3059;&#x308B;&#x3002;&#x5E38;&#x306B;&#x30D0;&#x30B0;&#x3092;&#x691C;&#x77E5;&#x3067;&#x304D;&#x308B;&#x308F;&#x3051;&#x3067;&#x306F;&#x306A;&#x3044;&#x304C;&#x3001;CI&#x3092;&#x5229;&#x7528;&#x3059;&#x308B;&#x3053;&#x3068;&#x3067;&#x3001;&#x305A;&#x3063;&#x3068;&#x4E0D;&#x5177;&#x5408;&#x304C;&#x6B8B;&#x308A;&#x7D9A;&#x3051;&#x308B;&#x53EF;&#x80FD;&#x6027;&#x3092;&#x6E1B;&#x3089;&#x3059;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x308B;&#x3060;&#x308D;&#x3046;&#x3002;</p>
+<h2 id="&#x65E5;&#x4ED8;&#x3092;&#x5916;&#x90E8;&#x304B;&#x3089;&#x6CE8;&#x5165;&#x3059;&#x308B;"><a name="&#x65E5;&#x4ED8;&#x3092;&#x5916;&#x90E8;&#x304B;&#x3089;&#x6CE8;&#x5165;&#x3059;&#x308B;" class="plugin-anchor" href="#&#x65E5;&#x4ED8;&#x3092;&#x5916;&#x90E8;&#x304B;&#x3089;&#x6CE8;&#x5165;&#x3059;&#x308B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x65E5;&#x4ED8;&#x3092;&#x5916;&#x90E8;&#x304B;&#x3089;&#x6CE8;&#x5165;&#x3059;&#x308B;</h2>
+<p><a href="http://techlife.cookpad.com/entry/2016/05/30/183947" target="_blank">&#x300C;&#x73FE;&#x5728;&#x6642;&#x523B;&#x300D;&#x3092;&#x5916;&#x90E8;&#x5165;&#x529B;&#x3068;&#x3059;&#x308B;&#x8A2D;&#x8A08;&#x3068;&#x3001;&#x305D;&#x306E;&#x5B9F;&#x88C5;&#x306E;&#x3053;&#x3068; - &#x30AF;&#x30C3;&#x30AF;&#x30D1;&#x30C3;&#x30C9;&#x958B;&#x767A;&#x8005;&#x30D6;&#x30ED;&#x30B0;</a></p>
+<h2 id="before&#x3068;letlet&#x306E;&#x4F7F;&#x3044;&#x5206;&#x3051;"><a name="before&#x3068;letlet&#x306E;&#x4F7F;&#x3044;&#x5206;&#x3051;" class="plugin-anchor" href="#before&#x3068;letlet&#x306E;&#x4F7F;&#x3044;&#x5206;&#x3051;"><i class="fa fa-link" aria-hidden="true"></i></a>before&#x3068;let(let!)&#x306E;&#x4F7F;&#x3044;&#x5206;&#x3051;</h2>
+<p>&#x30C6;&#x30B9;&#x30C8;&#x306E;&#x524D;&#x63D0;&#x3068;&#x306A;&#x308B;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;(&#x3084;&#x30EC;&#x30B3;&#x30FC;&#x30C9;)&#x3092;&#x751F;&#x6210;&#x3059;&#x308B;&#x5834;&#x5408;&#x3001;let(let!)&#x3084;before&#x3092;&#x4F7F;&#x3046;&#x3002;&#x3053;&#x306E;&#x3068;&#x304D;&#x3001;&#x751F;&#x6210;&#x5F8C;&#x306B;&#x53C2;&#x7167;&#x3059;&#x308B;&#x3082;&#x306E;&#x3092;let(let!)&#x3067;&#x751F;&#x6210;&#x3057;&#x3001;&#x305D;&#x308C;&#x4EE5;&#x5916;&#x3092;before&#x3067;&#x751F;&#x6210;&#x3059;&#x308B;&#x3068;&#x53EF;&#x8AAD;&#x6027;&#x304C;&#x5897;&#x3059;&#x3002;</p>
+<p>&#x6B21;&#x306E;&#x3088;&#x3046;&#x306A;<code>scope</code>&#x3092;&#x6301;&#x3064;<code>User</code>&#x30E2;&#x30C7;&#x30EB;&#x304C;&#x3042;&#x308B;&#x3068;&#x3059;&#x308B;&#x3002;</p>
+<pre><code class="lang-ruby"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span> &lt; ApplicationRecord</span>
+  scope <span class="hljs-symbol">:active</span>, -&gt; { where(<span class="hljs-symbol">deleted:</span> <span class="hljs-keyword">false</span>).where.<span class="hljs-keyword">not</span>(<span class="hljs-symbol">confirmed_at:</span> <span class="hljs-keyword">nil</span>) }
+<span class="hljs-keyword">end</span>
+</code></pre>
+<p>&#x3053;&#x306E;&#x30C6;&#x30B9;&#x30C8;&#x3092;<code>let!</code>&#x306E;&#x307F;&#x3092;&#x7528;&#x3044;&#x3066;&#x66F8;&#x304F;&#x3068;&#x6B21;&#x306E;&#x3088;&#x3046;&#x306B;&#x306A;&#x308B;&#x3002;</p>
+<pre><code class="lang-ruby"><span class="hljs-keyword">require</span> <span class="hljs-string">&apos;rails_helper&apos;</span>
+
+RSpec.describe User, <span class="hljs-symbol">type:</span> <span class="hljs-symbol">:model</span> <span class="hljs-keyword">do</span>
+  describe <span class="hljs-string">&apos;.active&apos;</span> <span class="hljs-keyword">do</span>
+    let!(<span class="hljs-symbol">:active</span>) { create <span class="hljs-symbol">:user</span>, <span class="hljs-symbol">deleted:</span> <span class="hljs-keyword">false</span>, <span class="hljs-symbol">confirmed_at:</span> Time.zone.now }
+    let!(<span class="hljs-symbol">:deleted_but_confirmed</span>) { create <span class="hljs-symbol">:user</span>, <span class="hljs-symbol">deleted:</span> <span class="hljs-keyword">true</span>, <span class="hljs-symbol">confirmed_at:</span> Time.zone.now }
+    let!(<span class="hljs-symbol">:deleted_and_not_convirmed</span>) { create <span class="hljs-symbol">:user</span>, <span class="hljs-symbol">deleted:</span> <span class="hljs-keyword">true</span>, <span class="hljs-symbol">confirmed_at:</span> <span class="hljs-keyword">nil</span> }
+    let!(<span class="hljs-symbol">:not_deleted_but_not_confirmed</span>) { create <span class="hljs-symbol">:user</span>, <span class="hljs-symbol">deleted:</span> <span class="hljs-keyword">false</span>, <span class="hljs-symbol">confirmed_at:</span> <span class="hljs-keyword">nil</span> }
+
+    it <span class="hljs-string">&apos;return active users&apos;</span> <span class="hljs-keyword">do</span>
+      expect(User.active).to eq [active]
+    <span class="hljs-keyword">end</span>
+  <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+</code></pre>
+<p><code>let!</code>&#x3068;<code>before</code>&#x3092;&#x4F75;&#x7528;&#x3057;&#x3066;&#x66F8;&#x304F;&#x3068;&#x6B21;&#x306E;&#x3088;&#x3046;&#x306B;&#x306A;&#x308B;&#x3002;</p>
+<pre><code class="lang-ruby"><span class="hljs-keyword">require</span> <span class="hljs-string">&apos;rails_helper&apos;</span>
+
+RSpec.describe User, <span class="hljs-symbol">type:</span> <span class="hljs-symbol">:model</span> <span class="hljs-keyword">do</span>
+  describe <span class="hljs-string">&apos;.active&apos;</span> <span class="hljs-keyword">do</span>
+    let!(<span class="hljs-symbol">:active</span>) { create <span class="hljs-symbol">:user</span>, <span class="hljs-symbol">deleted:</span> <span class="hljs-keyword">false</span>, <span class="hljs-symbol">confirmed_at:</span> Time.zone.now }
+
+    before <span class="hljs-keyword">do</span>
+      create <span class="hljs-symbol">:user</span>, <span class="hljs-symbol">deleted:</span> <span class="hljs-keyword">true</span>, <span class="hljs-symbol">confirmed_at:</span> Time.zone.now
+      create <span class="hljs-symbol">:user</span>, <span class="hljs-symbol">deleted:</span> <span class="hljs-keyword">true</span>, <span class="hljs-symbol">confirmed_at:</span> <span class="hljs-keyword">nil</span>
+      create <span class="hljs-symbol">:user</span>, <span class="hljs-symbol">deleted:</span> <span class="hljs-keyword">false</span>, <span class="hljs-symbol">confirmed_at:</span> <span class="hljs-keyword">nil</span>
+    <span class="hljs-keyword">end</span>
+
+    it <span class="hljs-string">&apos;return active users&apos;</span> <span class="hljs-keyword">do</span>
+      expect(User.active).to eq [active]
+    <span class="hljs-keyword">end</span>
+  <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+</code></pre>
+<p>&#x5F8C;&#x8005;&#x306E;&#x307B;&#x3046;&#x304C;&#x300C;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x306E;&#x623B;&#x308A;&#x5024;&#x3068;&#x306A;&#x308B;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x300D;&#x3068;&#x300C;&#x305D;&#x308C;&#x4EE5;&#x5916;&#x300D;&#x3092;&#x533A;&#x5225;&#x3057;&#x3084;&#x3059;&#x304F;&#x3001;&#x898B;&#x3084;&#x3059;&#x3044;&#x30B3;&#x30FC;&#x30C9;&#x3068;&#x306A;&#x308B;&#x3002;</p>
+<p>&#x203B;<code>let!(:deleted_but_confirmed)</code>&#x306E;&#x3088;&#x3046;&#x306B;&#x540D;&#x524D;&#x3092;&#x3064;&#x3051;&#x308B;&#x3053;&#x3068;&#x3067;&#x3001;&#x3069;&#x3093;&#x306A;&#x30EC;&#x30B3;&#x30FC;&#x30C9;&#x306A;&#x306E;&#x304B;&#x7406;&#x89E3;&#x3057;&#x3084;&#x3059;&#x304F;&#x306A;&#x308B;&#x3068;&#x611F;&#x3058;&#x308B;&#x4EBA;&#x3082;&#x3044;&#x308B;&#x304B;&#x3082;&#x3057;&#x308C;&#x306A;&#x3044;&#x3002;&#x3057;&#x304B;&#x3057;&#x30EC;&#x30B3;&#x30FC;&#x30C9;&#x306B;&#x540D;&#x524D;&#x4ED8;&#x3051;&#x304C;&#x5FC5;&#x8981;&#x3067;&#x3042;&#x308C;&#x3070;&#x3001;&#x5358;&#x7D14;&#x306B;&#x30B3;&#x30E1;&#x30F3;&#x30C8;&#x3068;&#x3057;&#x3066;&#x88DC;&#x8DB3;&#x3057;&#x3066;&#x3084;&#x308C;&#x3070;&#x3088;&#x3044;&#x3060;&#x308D;&#x3046;</p>
+<h2 id="&#x63A7;&#x3048;&#x3081;&#x306A;dry"><a name="&#x63A7;&#x3048;&#x3081;&#x306A;dry" class="plugin-anchor" href="#&#x63A7;&#x3048;&#x3081;&#x306A;dry"><i class="fa fa-link" aria-hidden="true"></i></a>&#x63A7;&#x3048;&#x3081;&#x306A;DRY</h2>
+<p>DRY&#x306B;&#x3059;&#x308B;&#x884C;&#x70BA;&#x306F;&#x5E38;&#x306B;&#x5584;&#x3060;&#x3068;&#x601D;&#x308F;&#x308C;&#x3066;&#x3044;&#x308B;&#x304B;&#x3082;&#x3057;&#x308C;&#x306A;&#x3044;&#x304C;&#x3001;&#x305D;&#x3046;&#x3067;&#x306F;&#x306A;&#x3044;&#x3002;&#x4F8B;&#x3048;&#x3070;&#x30B3;&#x30FC;&#x30C9;&#x306E;&#x91CD;&#x8907;&#x3092;&#x4E00;&#x3064;&#x306B;&#x307E;&#x3068;&#x3081;&#x308B;&#x3068;&#x3044;&#x3046;&#x3053;&#x3068;&#x306F;&#x51E6;&#x7406;&#x306E;&#x62BD;&#x8C61;&#x5316;&#x3092;&#x3059;&#x308B;&#x3068;&#x3044;&#x3046;&#x3053;&#x3068;&#x3067;&#x3001;&#x72B6;&#x6CC1;&#x3084;&#x62BD;&#x8C61;&#x5316;&#x306E;&#x4ED5;&#x65B9;&#x306B;&#x3088;&#x3063;&#x3066;&#x306F;DRY&#x306B;&#x3088;&#x3063;&#x3066;&#x6E1B;&#x3089;&#x3055;&#x308C;&#x305F;&#x30B3;&#x30B9;&#x30C8;&#x3092;&#x4E0A;&#x56DE;&#x308B;&#x30B3;&#x30B9;&#x30C8;&#x304C;&#x767A;&#x751F;&#x3059;&#x308B;&#x3053;&#x3068;&#x3082;&#x3042;&#x308B;&#x3002;</p>
+<h3 id="sharedexamples&#x306F;&#x3088;&#x304F;&#x8003;&#x3048;&#x3066;&#x4F7F;&#x3046;"><a name="sharedexamples&#x306F;&#x3088;&#x304F;&#x8003;&#x3048;&#x3066;&#x4F7F;&#x3046;" class="plugin-anchor" href="#sharedexamples&#x306F;&#x3088;&#x304F;&#x8003;&#x3048;&#x3066;&#x4F7F;&#x3046;"><i class="fa fa-link" aria-hidden="true"></i></a>shared_examples&#x306F;&#x3088;&#x304F;&#x8003;&#x3048;&#x3066;&#x4F7F;&#x3046;</h3>
+<p>shared_examples&#x3092;&#x5229;&#x7528;&#x3059;&#x308B;&#x3068;&#x30B3;&#x30FC;&#x30C9;&#x306E;&#x91CD;&#x8907;&#x3092;&#x524A;&#x9664;&#x3067;&#x304D;&#x308B;&#x304C;&#x3001;&#x66F8;&#x304D;&#x65B9;&#x306B;&#x3088;&#x3063;&#x3066;&#x306F;&#x304B;&#x3048;&#x3063;&#x3066;&#x53EF;&#x8AAD;&#x6027;&#x3092;&#x843D;&#x3068;&#x3059;&#x3053;&#x3068;&#x304C;&#x3042;&#x308B;&#x3002;</p>
+<p>&#x4F8B;&#x3068;&#x3057;&#x3066;&#x3001;&#x5F15;&#x6570;&#x3068;&#x3057;&#x3066;&#x6E21;&#x3055;&#x308C;&#x305F;&#x66DC;&#x65E5;&#x306B;&#x5BFE;&#x5FDC;&#x3057;&#x305F;&#x5206;&#x3060;&#x3051;&#x30DD;&#x30A4;&#x30F3;&#x30C8;&#x3092;&#x5897;&#x3084;&#x3059;&#x30E1;&#x30BD;&#x30C3;&#x30C9;<code>Point#increase_by_day_of_the_week</code>&#x306E;&#x30C6;&#x30B9;&#x30C8;&#x3092;<code>shared_examples</code>&#x3092;&#x5229;&#x7528;&#x3057;&#x3066;&#x66F8;&#x3044;&#x3066;&#x307F;&#x308B;&#x3002;shard_example&#x306E;&#x5B9A;&#x7FA9;&#x306F;&#x5225;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306B;&#x66F8;&#x304B;&#x308C;&#x3066;&#x3044;&#x308B;&#x3068;&#x3057;&#x3066;&#x3001;&#x5148;&#x306B;shared_examples&#x3092;&#x5229;&#x7528;&#x3059;&#x308B;&#x5074;&#x3060;&#x3051;&#x306E;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x898B;&#x3066;&#x307F;&#x308B;&#x3002;</p>
+<pre><code class="lang-ruby">RSpec.describe Point, <span class="hljs-symbol">type:</span> <span class="hljs-symbol">:model</span> <span class="hljs-keyword">do</span>
+  describe <span class="hljs-string">&apos;#increase_by_day_of_the_week&apos;</span> <span class="hljs-keyword">do</span>
+    let(<span class="hljs-symbol">:point</span>) { create <span class="hljs-symbol">:point</span>, <span class="hljs-symbol">point:</span> <span class="hljs-number">0</span> }
+
+    it_behaves_like <span class="hljs-string">&apos;point increasing by day of the week&apos;</span>, <span class="hljs-number">100</span> <span class="hljs-keyword">do</span>
+      let(<span class="hljs-symbol">:wday</span>) { <span class="hljs-number">0</span> }
+    <span class="hljs-keyword">end</span>
+
+    it_behaves_like <span class="hljs-string">&apos;point increasing by day of the week&apos;</span>, <span class="hljs-number">50</span> <span class="hljs-keyword">do</span>
+      let(<span class="hljs-symbol">:wday</span>) { <span class="hljs-number">1</span> }
+    <span class="hljs-keyword">end</span>
+
+    it_behaves_like <span class="hljs-string">&apos;point increasing by day of the week&apos;</span>, <span class="hljs-number">30</span> <span class="hljs-keyword">do</span>
+      let(<span class="hljs-symbol">:wday</span>) { <span class="hljs-number">2</span> }
+    <span class="hljs-keyword">end</span>
+
+    <span class="hljs-comment"># ...</span>
+  <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+</code></pre>
+<p>&#x3069;&#x3093;&#x306A;&#x524D;&#x63D0;&#x6761;&#x4EF6;&#x3067;&#x7D50;&#x679C;&#x3068;&#x3057;&#x3066;&#x4F55;&#x3092;&#x671F;&#x5F85;&#x3057;&#x3066;&#x3044;&#x308B;&#x306E;&#x304B;&#x3001;&#x3053;&#x308C;&#x3060;&#x3051;&#x3092;&#x898B;&#x3066;&#x7406;&#x89E3;&#x3067;&#x304D;&#x308B;&#x3060;&#x308D;&#x3046;&#x304B;&#x3002;</p>
+<p>&#x5B9A;&#x7FA9;&#x306F;&#x6B21;&#x306E;&#x3088;&#x3046;&#x306B;&#x306A;&#x308B;&#x3002;</p>
+<pre><code class="lang-ruby">RSpec.shared_examples <span class="hljs-string">&apos;point increasing by day of the week&apos;</span> <span class="hljs-keyword">do</span> |expected_point|
+  it <span class="hljs-string">&quot;increase by <span class="hljs-subst">#{expected_point}</span>&quot;</span> <span class="hljs-keyword">do</span>
+    expect(point.point).to eq <span class="hljs-number">0</span>
+    point.increase_by_day_of_the_week(wday)
+    expect(point.point).to eq expected_point
+  <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+</code></pre>
+<p>&#x3053;&#x306E;&#x30C6;&#x30B9;&#x30C8;&#x304C;&#x8AAD;&#x307F;&#x3065;&#x3089;&#x3044;&#x306E;&#x306F;&#x3001;shared_examples&#x3092;&#x6210;&#x7ACB;&#x3055;&#x305B;&#x308B;&#x305F;&#x3081;&#x306B;&#x5FC5;&#x8981;&#x306A;&#x524D;&#x63D0;&#x6761;&#x4EF6;&#x304C;&#x591A;&#x3044;&#x3053;&#x3068;&#x304C;&#x4E00;&#x3064;&#x6319;&#x3052;&#x3089;&#x308C;&#x308B;&#x3002;</p>
+<ul>
+<li>&#x30C6;&#x30B9;&#x30C8;&#x3055;&#x308C;&#x308B;&#x4E3B;&#x4F53;&#x3067;&#x3042;&#x308B;<code>point</code></li>
+<li>&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x306B;&#x6E21;&#x3055;&#x308C;&#x308B;&#x5F15;&#x6570;&#x3067;&#x3042;&#x308B;<code>wday</code></li>
+<li>&#x671F;&#x5F85;&#x3059;&#x308B;&#x7D50;&#x679C;&#x3067;&#x3042;&#x308B;<code>expected_point</code></li>
+</ul>
+<p>&#x307E;&#x305F;&#x3001;&#x305D;&#x308C;&#x305E;&#x308C;&#x306E;&#x5B9A;&#x7FA9;&#x304C;&#x5206;&#x6563;&#x3057;&#x3066;&#x3044;&#x308B;&#x3053;&#x3068;&#x304C;&#x6319;&#x3052;&#x3089;&#x308C;&#x308B;</p>
+<ul>
+<li>&#x5916;&#x5074;&#x306E;let(point)</li>
+<li><code>it_behaves_like</code>&#x30D6;&#x30ED;&#x30C3;&#x30AF;&#x5185;&#x306E;let(wday)</li>
+<li><code>it_behaves_like</code>&#x306E;&#x7B2C;&#x4E8C;&#x5F15;&#x6570;(expected_point)</li>
+</ul>
+<p>&#x53EF;&#x8AAD;&#x6027;&#x3092;&#x4E0A;&#x3052;&#x308B;&#x306B;&#x306F;&#x3001;&#x307E;&#x305A;&#x3001;&#x9069;&#x5207;&#x306B;&#x540D;&#x524D;&#x3092;&#x3064;&#x3051;&#x308B;&#x3053;&#x3068;&#x304C;&#x8003;&#x3048;&#x3089;&#x308C;&#x308B;&#x3060;&#x308D;&#x3046;&#x3002;</p>
+<pre><code class="lang-ruby">RSpec.shared_examples <span class="hljs-string">&apos;point increasing by day of the week&apos;</span> <span class="hljs-keyword">do</span> |<span class="hljs-symbol">expected_point:</span>|
+  it <span class="hljs-string">&quot;increase by <span class="hljs-subst">#{expected_point}</span>&quot;</span> <span class="hljs-keyword">do</span>
+    expect(point.point).to eq <span class="hljs-number">0</span>
+    point.increase_by_day_of_the_week(wday)
+    expect(point.point).to eq expected_point
+  <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+
+RSpec.describe Point, <span class="hljs-symbol">type:</span> <span class="hljs-symbol">:model</span> <span class="hljs-keyword">do</span>
+  describe <span class="hljs-string">&apos;#increase_by_day_of_the_week&apos;</span> <span class="hljs-keyword">do</span>
+    let(<span class="hljs-symbol">:point</span>) { create <span class="hljs-symbol">:point</span>, <span class="hljs-symbol">point:</span> <span class="hljs-number">0</span> }
+
+    context <span class="hljs-string">&apos;on sunday&apos;</span> <span class="hljs-keyword">do</span>
+      let(<span class="hljs-symbol">:wday</span>) { <span class="hljs-number">0</span> }
+      it_behaves_like <span class="hljs-string">&apos;point increasing by day of the week&apos;</span>, <span class="hljs-symbol">expected_point:</span> <span class="hljs-number">100</span>
+    <span class="hljs-keyword">end</span>
+
+    context <span class="hljs-string">&apos;on monday&apos;</span> <span class="hljs-keyword">do</span>
+      let(<span class="hljs-symbol">:wday</span>) { <span class="hljs-number">1</span> }
+      it_behaves_like <span class="hljs-string">&apos;point increasing by day of the week&apos;</span>, <span class="hljs-symbol">expected_point:</span> <span class="hljs-number">50</span>
+    <span class="hljs-keyword">end</span>
+
+    context <span class="hljs-string">&apos;on tuesday&apos;</span> <span class="hljs-keyword">do</span>
+      let(<span class="hljs-symbol">:wday</span>) { <span class="hljs-number">2</span> }
+      it_behaves_like <span class="hljs-string">&apos;point increasing by day of the week&apos;</span>, <span class="hljs-symbol">expected_point:</span> <span class="hljs-number">30</span>
+    <span class="hljs-keyword">end</span>
+
+    <span class="hljs-comment"># ...</span>
+  <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+</code></pre>
+<p>&#x65B0;&#x3057;&#x304F;context&#x3092;&#x4F5C;&#x308A;&#x3001;<code>wday</code>&#x306B;&#x3064;&#x3044;&#x3066;&#x306E;&#x8AAC;&#x660E;&#x3092;&#x52A0;&#x3048;&#x305F;&#x3002;&#x305D;&#x3057;&#x3066;&#x3001;&#x671F;&#x5F85;&#x3059;&#x308B;&#x7D50;&#x679C;&#x3067;&#x3042;&#x308B;<code>expected_point</code>&#x3092;&#x30AD;&#x30FC;&#x30EF;&#x30FC;&#x30C9;&#x5F15;&#x6570;&#x3068;&#x3057;&#x3066;&#x5229;&#x7528;&#x3059;&#x308B;&#x3053;&#x3068;&#x3067;&#x3001;&#x5B9F;&#x5F15;&#x6570;&#x5074;&#x306B;&#x540D;&#x524D;&#x304C;&#x3064;&#x304D;&#x3001;&#x6570;&#x5024;&#x304C;&#x4F55;&#x3092;&#x8868;&#x3059;&#x306E;&#x304B;&#x3059;&#x3050;&#x306B;&#x7406;&#x89E3;&#x3067;&#x304D;&#x308B;&#x3088;&#x3046;&#x306B;&#x306A;&#x3063;&#x305F;&#x3002;</p>
+<p>&#x3057;&#x304B;&#x3057;&#x3001;&#x305D;&#x3082;&#x305D;&#x3082;&#x3053;&#x308C;&#x306F;<code>shared_examples</code>&#x3092;&#x5229;&#x7528;&#x3059;&#x3079;&#x304D;&#x30B1;&#x30FC;&#x30B9;&#x306A;&#x306E;&#x3060;&#x308D;&#x3046;&#x304B;&#xFF1F;<code>shared_examples</code>&#x3092;&#x5229;&#x7528;&#x305B;&#x305A;&#x306B;&#x66F8;&#x304F;&#x3068;&#x6B21;&#x306E;&#x3088;&#x3046;&#x306B;&#x306A;&#x308B;&#x3002;</p>
+<pre><code class="lang-ruby">RSpec.describe Point, <span class="hljs-symbol">type:</span> <span class="hljs-symbol">:model</span> <span class="hljs-keyword">do</span>
+  describe <span class="hljs-string">&apos;#increase_by_day_of_the_week&apos;</span> <span class="hljs-keyword">do</span>
+    let(<span class="hljs-symbol">:point</span>) { create <span class="hljs-symbol">:point</span>, <span class="hljs-symbol">point:</span> <span class="hljs-number">0</span> }
+
+    context <span class="hljs-string">&apos;on sunday&apos;</span> <span class="hljs-keyword">do</span>
+      let(<span class="hljs-symbol">:wday</span>) { <span class="hljs-number">0</span> }
+
+      it <span class="hljs-string">&quot;increase by 100&quot;</span> <span class="hljs-keyword">do</span>
+        expect(point.point).to eq <span class="hljs-number">0</span>
+        point.increase_by_day_of_the_week(wday)
+        expect(point.point).to eq <span class="hljs-number">100</span>
+      <span class="hljs-keyword">end</span>
+    <span class="hljs-keyword">end</span>
+
+    context <span class="hljs-string">&apos;on monday&apos;</span> <span class="hljs-keyword">do</span>
+      let(<span class="hljs-symbol">:wday</span>) { <span class="hljs-number">1</span> }
+
+      it <span class="hljs-string">&quot;increase by 50&quot;</span> <span class="hljs-keyword">do</span>
+        expect(point.point).to eq <span class="hljs-number">0</span>
+        point.increase_by_day_of_the_week(wday)
+        expect(point.point).to eq <span class="hljs-number">50</span>
+      <span class="hljs-keyword">end</span>
+    <span class="hljs-keyword">end</span>
+
+    context <span class="hljs-string">&apos;on tuesday&apos;</span> <span class="hljs-keyword">do</span>
+      let(<span class="hljs-symbol">:wday</span>) { <span class="hljs-number">2</span> }
+
+      it <span class="hljs-string">&quot;increase by 30&quot;</span> <span class="hljs-keyword">do</span>
+        expect(point.point).to eq <span class="hljs-number">0</span>
+        point.increase_by_day_of_the_week(wday)
+        expect(point.point).to eq <span class="hljs-number">30</span>
+      <span class="hljs-keyword">end</span>
+    <span class="hljs-keyword">end</span>
+
+    <span class="hljs-comment"># ...</span>
+  <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+</code></pre>
+<p><code>it_behaves_like</code>&#x3067;&#x306E;&#x524D;&#x63D0;&#x6761;&#x4EF6;&#x3084;&#x5F15;&#x6570;&#x304C;&#x591A;&#x304F;&#x306A;&#x308C;&#x3070;&#x306A;&#x308B;&#x307B;&#x3069;&#x8907;&#x96D1;&#x5EA6;&#x304C;&#x5897;&#x3059;&#x3002;DRY&#x306B;&#x3059;&#x308B;&#x30E1;&#x30EA;&#x30C3;&#x30C8;&#x304C;&#x8907;&#x96D1;&#x5EA6;&#x3092;&#x4E0A;&#x56DE;&#x308B;&#x304B;&#x3069;&#x3046;&#x304B;&#x3001;&#x614E;&#x91CD;&#x306B;&#x8003;&#x3048;&#x308B;&#x3079;&#x304D;&#x3060;&#x3002;</p>
+<h2 id="&#x30B9;&#x30B3;&#x30FC;&#x30D7;&#x3092;&#x8003;&#x616E;&#x3059;&#x308B;"><a name="&#x30B9;&#x30B3;&#x30FC;&#x30D7;&#x3092;&#x8003;&#x616E;&#x3059;&#x308B;" class="plugin-anchor" href="#&#x30B9;&#x30B3;&#x30FC;&#x30D7;&#x3092;&#x8003;&#x616E;&#x3059;&#x308B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x30B9;&#x30B3;&#x30FC;&#x30D7;&#x3092;&#x8003;&#x616E;&#x3059;&#x308B;</h2>
+<h3 id="describe-&#x5916;&#x306B;&#x30C6;&#x30B9;&#x30C8;&#x30C7;&#x30FC;&#x30BF;&#x3092;&#x7F6E;&#x304B;&#x306A;&#x3044;"><a name="describe-&#x5916;&#x306B;&#x30C6;&#x30B9;&#x30C8;&#x30C7;&#x30FC;&#x30BF;&#x3092;&#x7F6E;&#x304B;&#x306A;&#x3044;" class="plugin-anchor" href="#describe-&#x5916;&#x306B;&#x30C6;&#x30B9;&#x30C8;&#x30C7;&#x30FC;&#x30BF;&#x3092;&#x7F6E;&#x304B;&#x306A;&#x3044;"><i class="fa fa-link" aria-hidden="true"></i></a>describe &#x5916;&#x306B;&#x30C6;&#x30B9;&#x30C8;&#x30C7;&#x30FC;&#x30BF;&#x3092;&#x7F6E;&#x304B;&#x306A;&#x3044;</h3>
+<p>&#x4F8B;&#x3048;&#x3070;&#x3001;&#x6B21;&#x306E;&#x3088;&#x3046;&#x306A; spec &#x304C;&#x3042;&#x308B;&#x3068;&#x3059;&#x308B;</p>
+<pre><code class="lang-ruby">describe <span class="hljs-string">&apos;sample specs&apos;</span> <span class="hljs-keyword">do</span>
+  context <span class="hljs-string">&apos;a&apos;</span> <span class="hljs-keyword">do</span>
+    <span class="hljs-comment"># ...</span>
+  <span class="hljs-keyword">end</span>
+
+  context <span class="hljs-string">&apos;b&apos;</span> <span class="hljs-keyword">do</span>
+    let!(<span class="hljs-symbol">:need_in_b_and_c</span>) { ... }        
+    <span class="hljs-comment"># ...</span>
+  <span class="hljs-keyword">end</span>
+
+  context <span class="hljs-string">&apos;c&apos;</span> <span class="hljs-keyword">do</span>
+    let!(<span class="hljs-symbol">:need_in_b_and_c</span>) { ... }        
+    <span class="hljs-comment"># ...</span>
+  <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+</code></pre>
+<p>&#x3053;&#x306E;&#x5834;&#x5408;&#x3001;b &#x3068; c &#x3067;&#x540C;&#x3058;&#x524D;&#x63D0;&#x6761;&#x4EF6;&#x3092;&#x5229;&#x7528;&#x3057;&#x3066;&#x3044;&#x308B;&#x306E;&#x3067;&#x3001;&#x4E00;&#x3064;&#x4E0A;&#x306E;&#x30EC;&#x30D9;&#x30EB;&#x306B;&#x79FB;&#x52D5;&#x3057;&#x3066;DRY&#x306B;&#x3057;&#x3088;&#x3046;&#x3068;&#x8003;&#x3048;&#x308B;&#x4EBA;&#x3082;&#x3044;&#x308B;&#x304B;&#x3082;&#x3057;&#x308C;&#x306A;&#x3044;&#x3002;</p>
+<pre><code class="lang-ruby">describe <span class="hljs-string">&apos;sample specs&apos;</span> <span class="hljs-keyword">do</span>
+  let!(<span class="hljs-symbol">:need_in_b_and_c</span>) { ... }        
+
+  context <span class="hljs-string">&apos;a&apos;</span> <span class="hljs-keyword">do</span>
+    <span class="hljs-comment"># ...</span>
+  <span class="hljs-keyword">end</span>
+
+  context <span class="hljs-string">&apos;b&apos;</span> <span class="hljs-keyword">do</span>
+    <span class="hljs-comment"># ...</span>
+  <span class="hljs-keyword">end</span>
+
+  context <span class="hljs-string">&apos;c&apos;</span> <span class="hljs-keyword">do</span>
+    <span class="hljs-comment"># ...</span>
+  <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+</code></pre>
+<p>&#x3057;&#x304B;&#x3057;&#x3001;&#x3053;&#x308C;&#x306F;&#x826F;&#x304F;&#x306A;&#x3044;&#x3002;&apos;a&apos; &#x306E;&#x30B3;&#x30F3;&#x30C6;&#x30AD;&#x30B9;&#x30C8;&#x306B;&#x3001;&#x5FC5;&#x8981;&#x306E;&#x306A;&#x3044;&#x524D;&#x63D0;&#x6761;&#x4EF6;&#x304C;&#x542B;&#x307E;&#x308C;&#x3066;&#x3057;&#x307E;&#x3046;&#x304B;&#x3089;&#x3060;&#x3002;&#x3053;&#x306E;&#x4F8B;&#x3060;&#x3051;&#x3060;&#x3068;&#x30D4;&#x30F3;&#x3068;&#x3053;&#x306A;&#x3044;&#x304B;&#x3082;&#x3057;&#x308C;&#x306A;&#x3044;&#x3002;&#x3053;&#x306E;&#x3088;&#x3046;&#x306A; let! &#x304C; 10&#x3001;context &#x304C; 30 &#x3042;&#x3063;&#x3066;&#x3001;&#x3069;&#x306E; let! &#x304C;&#x3069;&#x306E; context &#x306B;&#x5BFE;&#x5FDC;&#x3059;&#x308B;&#x524D;&#x63D0;&#x6761;&#x4EF6;&#x306A;&#x306E;&#x304B;&#x308F;&#x304B;&#x3089;&#x306A;&#x3044;&#x72B6;&#x6CC1;&#x3092;&#x60F3;&#x50CF;&#x3059;&#x308B;&#x3068;&#x3001;&#x4E0B;&#x624B;&#x306B;&#x524D;&#x63D0;&#x6761;&#x4EF6;&#x3092;&#x307E;&#x3068;&#x3081;&#x308B;&#x6016;&#x3055;&#x304C;&#x308F;&#x304B;&#x308B;&#x3060;&#x308D;&#x3046;&#x304B;&#x3002;</p>
+<p>&#x3082;&#x3061;&#x308D;&#x3093;&#x3001;&#x3059;&#x3079;&#x3066;&#x306E; context &#x306B;&#x304A;&#x3044;&#x3066;&#x3001;&#x5171;&#x901A;&#x3067;&#x4F7F;&#x3046;&#x524D;&#x63D0;&#x6761;&#x4EF6;&#x3067;&#x3042;&#x308C;&#x3070;&#x3001;&#x307E;&#x3068;&#x3081;&#x3066;&#x3057;&#x307E;&#x3046;&#x306E;&#x306F;&#x554F;&#x984C;&#x306A;&#x3044;&#x3002;</p>
+<h3 id="&#x5404;&#x30D6;&#x30ED;&#x30C3;&#x30AF;&#x306B;&#x304A;&#x3051;&#x308B;&#x524D;&#x63D0;&#x6761;&#x4EF6;&#x306E;&#x914D;&#x7F6E;&#x30EB;&#x30FC;&#x30EB;"><a name="&#x5404;&#x30D6;&#x30ED;&#x30C3;&#x30AF;&#x306B;&#x304A;&#x3051;&#x308B;&#x524D;&#x63D0;&#x6761;&#x4EF6;&#x306E;&#x914D;&#x7F6E;&#x30EB;&#x30FC;&#x30EB;" class="plugin-anchor" href="#&#x5404;&#x30D6;&#x30ED;&#x30C3;&#x30AF;&#x306B;&#x304A;&#x3051;&#x308B;&#x524D;&#x63D0;&#x6761;&#x4EF6;&#x306E;&#x914D;&#x7F6E;&#x30EB;&#x30FC;&#x30EB;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5404;&#x30D6;&#x30ED;&#x30C3;&#x30AF;&#x306B;&#x304A;&#x3051;&#x308B;&#x524D;&#x63D0;&#x6761;&#x4EF6;&#x306E;&#x914D;&#x7F6E;&#x30EB;&#x30FC;&#x30EB;</h3>
+<ul>
+<li>&#x5404;&#x30D6;&#x30ED;&#x30C3;&#x30AF;&#x306E;&#x524D;&#x63D0;&#x6761;&#x4EF6;&#x306F;&#x3001;&#x305D;&#x306E;&#x914D;&#x4E0B;&#x306E;&#x3059;&#x3079;&#x3066;&#x306E; expectation &#x3067;&#x5229;&#x7528;&#x3059;&#x308B;&#x3082;&#x306E;&#x306E;&#x307F;&#x66F8;&#x304F;</li>
+<li>&#x7279;&#x5B9A;&#x306E; expectation &#x306E;&#x307F;&#x3067;&#x5229;&#x7528;&#x3059;&#x308B;&#x3082;&#x306E;&#x306B;&#x304A;&#x3044;&#x3066;&#x306F;&#x3001;&#x305D;&#x306E; expectation &#x306B;&#x66F8;&#x304F;</li>
+</ul>
+<h3 id="&#x843D;&#x7A42;&#x62FE;&#x3044;"><a name="&#x843D;&#x7A42;&#x62FE;&#x3044;" class="plugin-anchor" href="#&#x843D;&#x7A42;&#x62FE;&#x3044;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x843D;&#x7A42;&#x62FE;&#x3044;</h3>
+<ul>
+<li>&#x5404;&#x30D6;&#x30ED;&#x30C3;&#x30AF;&#x306B;&#x304A;&#x3051;&#x308B;&#x524D;&#x63D0;&#x6761;&#x4EF6;&#x306E;&#x914D;&#x7F6E;&#x30EB;&#x30FC;&#x30EB;&#x3001;&#x306E;&#x4F8B;&#x5916;&#x306F;&#x6B21;&#x306E;&#x3088;&#x3046;&#x306A;&#x30B1;&#x30FC;&#x30B9;</li>
+<li>&#x3060;&#x304C;&#x3001;&#x57FA;&#x672C;&#x7684;&#x306B;&#x306F;&#x5404;&#x30D6;&#x30ED;&#x30C3;&#x30AF;&#x5185;&#x3067;&#x5BA3;&#x8A00;&#x3059;&#x308B;&#x307B;&#x3046;&#x304C;&#x671B;&#x307E;&#x3057;&#x3044;</li>
+</ul>
+<pre><code class="lang-ruby">let!(<span class="hljs-symbol">:user</span>) { create <span class="hljs-symbol">:user</span>, <span class="hljs-symbol">enabled:</span> enabled }
+
+context <span class="hljs-string">&apos;when user is enabled&apos;</span> <span class="hljs-keyword">do</span>
+  let(<span class="hljs-symbol">:enabled</span>) { <span class="hljs-keyword">true</span> }
+  it { ... }
+<span class="hljs-keyword">end</span>
+
+context <span class="hljs-string">&apos;when user is disabled&apos;</span> <span class="hljs-keyword">do</span>
+  let(<span class="hljs-symbol">:enabled</span>) { <span class="hljs-keyword">false</span> }
+  it { ... }
+<span class="hljs-keyword">end</span>
+</code></pre>
+<h3 id="&#x5FC5;&#x8981;&#x306A;&#x3044;&#x30EC;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x4F5C;&#x3089;&#x306A;&#x3044;"><a name="&#x5FC5;&#x8981;&#x306A;&#x3044;&#x30EC;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x4F5C;&#x3089;&#x306A;&#x3044;" class="plugin-anchor" href="#&#x5FC5;&#x8981;&#x306A;&#x3044;&#x30EC;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x4F5C;&#x3089;&#x306A;&#x3044;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5FC5;&#x8981;&#x306A;&#x3044;&#x30EC;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x4F5C;&#x3089;&#x306A;&#x3044;</h3>
+<p>&#x30D1;&#x30D5;&#x30A9;&#x30FC;&#x30DE;&#x30F3;&#x30B9;&#x306E;&#x89B3;&#x70B9;&#x304B;&#x3089;&#x3001;&#x30EC;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x4F5C;&#x3089;&#x306A;&#x304F;&#x3066;&#x3059;&#x3080;&#x5834;&#x5408;&#x306F;&#x4F5C;&#x3089;&#x306A;&#x3044;&#x3088;&#x3046;&#x306B;&#x3057;&#x305F;&#x3044;&#x3002;</p>
+<pre><code class="lang-ruby">describe <span class="hljs-string">&apos;posts#index&apos;</span> <span class="hljs-keyword">do</span>
+  context <span class="hljs-string">&apos;when visit /posts&apos;</span> <span class="hljs-keyword">do</span>
+    let!(<span class="hljs-symbol">:posts</span>) { create_list <span class="hljs-symbol">:post</span>, <span class="hljs-number">100</span> }
+
+    before { visit posts_path }
+
+    it <span class="hljs-string">&apos;display all post titles&apos;</span> <span class="hljs-keyword">do</span>
+      posts.each <span class="hljs-keyword">do</span> |post|
+        expect(page).to have_content post.title
+      <span class="hljs-keyword">end</span>
+    <span class="hljs-keyword">end</span>
+  <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+</code></pre>
+<p>&#x300C;100&#x4EF6;&#x306E;&#x6295;&#x7A3F;&#x30BF;&#x30A4;&#x30C8;&#x30EB;&#x304C;&#x8868;&#x793A;&#x3067;&#x304D;&#x308B;&#x3053;&#x3068;&#x300D;&#x3092;&#x30C6;&#x30B9;&#x30C8;&#x3057;&#x305F;&#x3044;&#x5834;&#x5408;&#x306F;&#x5225;&#x3060;&#x304C;&#x3001;&#x305F;&#x3060;&#x6295;&#x7A3F;&#x30BF;&#x30A4;&#x30C8;&#x30EB;&#x3092;&#x8868;&#x793A;&#x3067;&#x304D;&#x3066;&#x3044;&#x308B;&#x304B;&#x30C1;&#x30A7;&#x30C3;&#x30AF;&#x3067;&#x304D;&#x308C;&#x3070;&#x3044;&#x3044;&#x5834;&#x5408;&#x3001;&#x660E;&#x3089;&#x304B;&#x306B;&#x7121;&#x99C4;&#x306A;&#x30EC;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x4F5C;&#x3063;&#x3066;&#x3044;&#x308B;&#x3002;</p>
+<p>&#x3053;&#x306E;&#x5834;&#x5408;&#x306E;&#x6700;&#x5C0F;&#x9650;&#x306E;&#x30EC;&#x30B3;&#x30FC;&#x30C9;&#x6570;&#x306F;1&#x4EF6;&#x3067;&#x3042;&#x308B;&#x3002;</p>
+<pre><code class="lang-ruby">describe <span class="hljs-string">&apos;posts#index&apos;</span> <span class="hljs-keyword">do</span>
+  context <span class="hljs-string">&apos;when visit /posts&apos;</span> <span class="hljs-keyword">do</span>
+    let!(<span class="hljs-symbol">:post</span>) { create <span class="hljs-symbol">:post</span> }
+
+    before { visit posts_path }
+
+    it <span class="hljs-string">&apos;display post title&apos;</span> <span class="hljs-keyword">do</span>
+      expect(page).to have_content post.title
+    <span class="hljs-keyword">end</span>
+  <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+</code></pre>
+<p>&#x30E2;&#x30C7;&#x30EB;&#x306E;&#x30E6;&#x30CB;&#x30C3;&#x30C8;&#x30C6;&#x30B9;&#x30C8;&#x3067;&#x3082;&#x3001;&#x4F5C;&#x3089;&#x306A;&#x304F;&#x3066;&#x3088;&#x3044;&#x30EC;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x4F5C;&#x3063;&#x3066;&#x3044;&#x308B;&#x30B1;&#x30FC;&#x30B9;&#x306F;&#x3088;&#x304F;&#x3042;&#x308B;&#x3002;</p>
+<pre><code class="lang-ruby">describe <span class="hljs-string">&apos;User&apos;</span> <span class="hljs-keyword">do</span>
+  describe <span class="hljs-string">&apos;#fullname&apos;</span> <span class="hljs-keyword">do</span>
+    let!(<span class="hljs-symbol">:user</span>) { create <span class="hljs-symbol">:user</span>, <span class="hljs-symbol">first_name:</span> <span class="hljs-string">&apos;Shinichi&apos;</span>, <span class="hljs-symbol">last_name:</span> <span class="hljs-string">&apos;Maeshima&apos;</span> }
+
+    it <span class="hljs-string">&apos;return full name&apos;</span> <span class="hljs-keyword">do</span>
+      expect(user.fullname).to eq <span class="hljs-string">&apos;Shinichi Maeshima&apos;</span>
+    <span class="hljs-keyword">end</span>
+  <span class="hljs-keyword">end</span>  
+<span class="hljs-keyword">end</span>
+</code></pre>
+<p><code>User#fullname</code>&#x306F;&#x30EC;&#x30B3;&#x30FC;&#x30C9;&#x304C;&#x4FDD;&#x5B58;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x304B;&#x5426;&#x304B;&#x306B;&#x5F71;&#x97FF;&#x3057;&#x306A;&#x3044;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3067;&#x3042;&#x308B;&#x3002;&#x3053;&#x306E;&#x5834;&#x5408;&#x306F;<code>create</code>&#x3067;&#x306F;&#x306A;&#x304F;<code>build</code>(&#x3082;&#x3057;&#x304F;&#x306F;<code>build_stubbed</code>)&#x3092;&#x4F7F;&#x3046;&#x3002;</p>
+<pre><code class="lang-ruby">describe <span class="hljs-string">&apos;User&apos;</span> <span class="hljs-keyword">do</span>
+  describe <span class="hljs-string">&apos;#fullname&apos;</span> <span class="hljs-keyword">do</span>
+    let!(<span class="hljs-symbol">:user</span>) { build <span class="hljs-symbol">:user</span>, <span class="hljs-symbol">first_name:</span> <span class="hljs-string">&apos;Shinichi&apos;</span>, <span class="hljs-symbol">last_name:</span> <span class="hljs-string">&apos;Maeshima&apos;</span> }
+
+    it <span class="hljs-string">&apos;return full name&apos;</span> <span class="hljs-keyword">do</span>
+      expect(user.fullname).to eq <span class="hljs-string">&apos;Shinichi Maeshima&apos;</span>
+    <span class="hljs-keyword">end</span>
+  <span class="hljs-keyword">end</span>  
+<span class="hljs-keyword">end</span>
+</code></pre>
+<p>&#x3053;&#x306E;&#x3088;&#x3046;&#x306A;&#x5358;&#x7D14;&#x306A;&#x30B1;&#x30FC;&#x30B9;&#x3067;&#x306F;<code>User.new</code>&#x3092;&#x5229;&#x7528;&#x3057;&#x3066;&#x3082;&#x826F;&#x3044;&#x3002;</p>
+<h3 id="update&#x3067;&#x30C7;&#x30FC;&#x30BF;&#x3092;&#x5909;&#x66F4;&#x3057;&#x306A;&#x3044;"><a name="update&#x3067;&#x30C7;&#x30FC;&#x30BF;&#x3092;&#x5909;&#x66F4;&#x3057;&#x306A;&#x3044;" class="plugin-anchor" href="#update&#x3067;&#x30C7;&#x30FC;&#x30BF;&#x3092;&#x5909;&#x66F4;&#x3057;&#x306A;&#x3044;"><i class="fa fa-link" aria-hidden="true"></i></a>update&#x3067;&#x30C7;&#x30FC;&#x30BF;&#x3092;&#x5909;&#x66F4;&#x3057;&#x306A;&#x3044;</h3>
+<p>FactoryGirl&#x3067;&#x4F5C;&#x6210;&#x3057;&#x305F;&#x30EC;&#x30B3;&#x30FC;&#x30C9;&#x4E2D;&#x306E;&#x30AB;&#x30E9;&#x30E0;&#x3092;update&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3067;&#x5909;&#x66F4;&#x3059;&#x308B;&#x3068;&#x3001;&#x6700;&#x7D42;&#x7684;&#x306A;&#x30EC;&#x30B3;&#x30FC;&#x30C9;&#x306E;&#x72B6;&#x614B;&#x304C;&#x308F;&#x304B;&#x308A;&#x306B;&#x304F;&#x304F;&#x306A;&#x308B;&#x3057;&#x3001;&#x30C6;&#x30B9;&#x30C8;&#x306B;&#x4F9D;&#x5B58;&#x3057;&#x3066;&#x3044;&#x308B;&#x5C5E;&#x6027;&#x3082;&#x308F;&#x304B;&#x308A;&#x306B;&#x304F;&#x304F;&#x306A;&#x308B;&#x306E;&#x3067;&#x907F;&#x3051;&#x308B;&#x3002;</p>
+<pre><code class="lang-ruby">describe Post <span class="hljs-keyword">do</span>
+  let!(<span class="hljs-symbol">:post</span>) { create <span class="hljs-symbol">:post</span> }
+
+  describe <span class="hljs-string">&apos;#published?&apos;</span> <span class="hljs-keyword">do</span>
+    subject { post.published? }
+
+    context <span class="hljs-string">&apos;when the post has already published&apos;</span> <span class="hljs-keyword">do</span>
+      it { is_expected.to eq <span class="hljs-keyword">true</span> }
+    <span class="hljs-keyword">end</span>
+
+    context <span class="hljs-string">&apos;when the post has not published&apos;</span> <span class="hljs-keyword">do</span>
+      before { post.update(<span class="hljs-symbol">publish_at:</span> <span class="hljs-keyword">nil</span>) }
+
+      it { is_expected.to eq <span class="hljs-keyword">false</span> }
+    <span class="hljs-keyword">end</span>    
+
+    context <span class="hljs-string">&apos;when the post is closed&apos;</span> <span class="hljs-keyword">do</span>
+      before { post.update(<span class="hljs-symbol">status:</span> <span class="hljs-symbol">:close</span>) }
+
+      it { is_expected.to eq <span class="hljs-keyword">false</span> }
+    <span class="hljs-keyword">end</span>    
+
+    context <span class="hljs-string">&apos;when the title includes &quot;[WIP]&quot;&apos;</span> <span class="hljs-keyword">do</span>
+      before { post.update(<span class="hljs-symbol">title:</span> <span class="hljs-string">&apos;[WIP]hello world&apos;</span>) }
+
+      it { is_expected.to eq <span class="hljs-keyword">false</span> }
+    <span class="hljs-keyword">end</span>    
+  <span class="hljs-keyword">end</span>    
+<span class="hljs-keyword">end</span>
+</code></pre>
+<p><code>Post#published?</code>&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x306B;&#x4F9D;&#x5B58;&#x3057;&#x3066;&#x3044;&#x308B;&#x5C5E;&#x6027;&#x3092;&#x3059;&#x3050;&#x306B;&#x7406;&#x89E3;&#x3059;&#x308B;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x308B;&#x3060;&#x308D;&#x3046;&#x304B;&#xFF1F;update&#x306F;&#x305F;&#x3044;&#x3066;&#x3044;FactoryGirl&#x306E;&#x30C7;&#x30D5;&#x30A9;&#x30EB;&#x30C8;&#x5024;&#x3092;&#x300C;&#x4E00;&#x756A;&#x30C7;&#x30FC;&#x30BF;&#x3068;&#x3057;&#x3066;&#x591A;&#x3044;&#x5F62;&#x300D;&#x306B;&#x8A2D;&#x5B9A;&#x3057;&#x3001;&#x305D;&#x308C;&#x3092;&#x5C11;&#x3057;&#x5909;&#x66F4;&#x3057;&#x3066;&#x4F7F;&#x3046;&#x305F;&#x3081;&#x306B;&#x4F7F;&#x308F;&#x308C;&#x308B;&#x3002;</p>
+<p>update&#x306F;&#x4F7F;&#x7528;&#x305B;&#x305A;&#x3001;<a href="https://github.com/willnet/rspec-style-guide#factorygirl&#x306E;&#x30C7;&#x30D5;&#x30A9;&#x30EB;&#x30C8;&#x5024;" target="_blank">FactoryGirl&#x306E;&#x30C7;&#x30D5;&#x30A9;&#x30EB;&#x30C8;&#x5024;)</a>&#x306B;&#x8A18;&#x8F09;&#x3057;&#x305F;&#x3088;&#x3046;&#x306B;&#x30C7;&#x30D5;&#x30A9;&#x30EB;&#x30C8;&#x5024;&#x3092;&#x30E9;&#x30F3;&#x30C0;&#x30E0;&#x306B;&#x4FDD;&#x3064;&#x3068;&#x826F;&#x3044;&#x3002;</p>
+<h3 id="let&#x3092;&#x4E0A;&#x66F8;&#x304D;&#x3057;&#x306A;&#x3044;"><a name="let&#x3092;&#x4E0A;&#x66F8;&#x304D;&#x3057;&#x306A;&#x3044;" class="plugin-anchor" href="#let&#x3092;&#x4E0A;&#x66F8;&#x304D;&#x3057;&#x306A;&#x3044;"><i class="fa fa-link" aria-hidden="true"></i></a>let&#x3092;&#x4E0A;&#x66F8;&#x304D;&#x3057;&#x306A;&#x3044;</h3>
+<p><code>let</code>&#x3067;&#x5B9A;&#x7FA9;&#x3057;&#x305F;&#x30D1;&#x30E9;&#x30E1;&#x30FC;&#x30BF;&#x3092;&#x5185;&#x5074;&#x306E;context&#x3067;&#x4E0A;&#x66F8;&#x304D;&#x3059;&#x308B;&#x3068;&#x3001;<a href="https://github.com/willnet/rspec-style-guide#update&#x3067;&#x30C7;&#x30FC;&#x30BF;&#x3092;&#x5909;&#x66F4;&#x3057;&#x306A;&#x3044;" target="_blank">update&#x3067;&#x30C7;&#x30FC;&#x30BF;&#x3092;&#x5909;&#x66F4;&#x3057;&#x306A;&#x3044;</a>&#x3067;&#x8AAC;&#x660E;&#x3057;&#x305F;&#x4F8B;&#x3068;&#x540C;&#x69D8;&#x306B;&#x3001;&#x6700;&#x7D42;&#x7684;&#x306A;&#x30EC;&#x30B3;&#x30FC;&#x30C9;&#x306E;&#x72B6;&#x614B;&#x304C;&#x308F;&#x304B;&#x308A;&#x306B;&#x304F;&#x304F;&#x306A;&#x308B;&#x306E;&#x3067;&#x907F;&#x3051;&#x308B;&#x3002;</p>
+<pre><code class="lang-ruby">describe Post <span class="hljs-keyword">do</span>
+  let!(<span class="hljs-symbol">:post</span>) { create <span class="hljs-symbol">:post</span>, <span class="hljs-symbol">title:</span> title, <span class="hljs-symbol">status:</span> status, <span class="hljs-symbol">publish_at:</span> publish_at }
+  let(<span class="hljs-symbol">:title</span>) { <span class="hljs-string">&apos;hello world&apos;</span> }
+  let(<span class="hljs-symbol">:status</span>) { <span class="hljs-symbol">:open</span> }
+  let(<span class="hljs-symbol">:publish_at</span>) { Time.zone.now }
+
+  describe <span class="hljs-string">&apos;#published?&apos;</span> <span class="hljs-keyword">do</span>
+    subject { post.published? }
+
+    context <span class="hljs-string">&apos;when the post has already published&apos;</span> <span class="hljs-keyword">do</span>
+      it { is_expected.to eq <span class="hljs-keyword">true</span> }
+    <span class="hljs-keyword">end</span>
+
+    context <span class="hljs-string">&apos;when the post has not published&apos;</span> <span class="hljs-keyword">do</span>
+      let(<span class="hljs-symbol">:publish_at</span>) { <span class="hljs-keyword">nil</span> }
+
+      it { is_expected.to eq <span class="hljs-keyword">false</span> }
+    <span class="hljs-keyword">end</span>    
+
+    context <span class="hljs-string">&apos;when the post is closed&apos;</span> <span class="hljs-keyword">do</span>
+      let(<span class="hljs-symbol">:status</span>) { <span class="hljs-symbol">:close</span> }
+
+      it { is_expected.to eq <span class="hljs-keyword">false</span> }
+    <span class="hljs-keyword">end</span>    
+
+    context <span class="hljs-string">&apos;when the title includes &quot;[WIP]&quot;&apos;</span> <span class="hljs-keyword">do</span>
+      let(<span class="hljs-symbol">:title</span>) { <span class="hljs-string">&apos;[WIP]hello world&apos;</span>}
+
+      it { is_expected.to eq <span class="hljs-keyword">false</span> }
+    <span class="hljs-keyword">end</span>    
+  <span class="hljs-keyword">end</span>    
+<span class="hljs-keyword">end</span>
+</code></pre>
+<h3 id="subject&#x3092;&#x4F7F;&#x3046;&#x3068;&#x304D;&#x306E;&#x6CE8;&#x610F;&#x4E8B;&#x9805;"><a name="subject&#x3092;&#x4F7F;&#x3046;&#x3068;&#x304D;&#x306E;&#x6CE8;&#x610F;&#x4E8B;&#x9805;" class="plugin-anchor" href="#subject&#x3092;&#x4F7F;&#x3046;&#x3068;&#x304D;&#x306E;&#x6CE8;&#x610F;&#x4E8B;&#x9805;"><i class="fa fa-link" aria-hidden="true"></i></a>subject&#x3092;&#x4F7F;&#x3046;&#x3068;&#x304D;&#x306E;&#x6CE8;&#x610F;&#x4E8B;&#x9805;</h3>
+<p><code>subject</code>&#x306F;<code>is_expected</code>&#x3084;<code>should</code>&#x3092;&#x4F7F;&#x3044;&#x4E00;&#x884C;&#x3067;expectation&#x3092;&#x66F8;&#x304F;&#x5834;&#x5408;&#x306F;&#x4FBF;&#x5229;&#x3060;&#x304C;&#x3001;&#x9006;&#x306B;&#x53EF;&#x8AAD;&#x6027;&#x3092;&#x640D;&#x306A;&#x3046;&#x4F7F;&#x308F;&#x308C;&#x65B9;&#x3092;&#x3055;&#x308C;&#x308B;&#x5834;&#x5408;&#x304C;&#x3042;&#x308B;&#x3002;</p>
+<pre><code class="lang-ruby">describe <span class="hljs-string">&apos;ApiClient#save_record_from_api&apos;</span> <span class="hljs-keyword">do</span>
+  let!(<span class="hljs-symbol">:client</span>) { ApiClient.new }
+  subject { client.save_record_from_api(params) }
+
+  <span class="hljs-comment">#</span>
+  <span class="hljs-comment"># ...&#x591A;&#x304F;&#x306E;expectation&#x3092;&#x7701;&#x7565;&#x3057;&#x3066;&#x3044;&#x308B;...</span>
+  <span class="hljs-comment">#</span>
+
+  context <span class="hljs-string">&apos;when pass  { limit: 10 }&apos;</span> <span class="hljs-keyword">do</span>
+    let(<span class="hljs-symbol">:params</span>) { { <span class="hljs-symbol">limit:</span> <span class="hljs-number">10</span>} }
+
+    it <span class="hljs-string">&apos;return ApiResponse object&apos;</span> <span class="hljs-keyword">do</span>
+      is_expected.to be_an_instance_of ApiResponse
+    <span class="hljs-keyword">end</span>
+
+    it <span class="hljs-string">&apos;save 10 items&apos;</span> <span class="hljs-keyword">do</span>
+      expect { subject }.to change { Item.count }.by(<span class="hljs-number">10</span>)
+    <span class="hljs-keyword">end</span>
+  <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+</code></pre>
+<p>&#x3053;&#x306E;&#x3088;&#x3046;&#x306A;&#x3068;&#x304D;&#x3001;<code>expect { subject }</code>&#x306E;<code>subject</code>&#x306F;&#x4E00;&#x4F53;&#x4F55;&#x3092;&#x5B9F;&#x884C;&#x3057;&#x3066;&#x3044;&#x308B;&#x306E;&#x304B;&#x3059;&#x3050;&#x306B;&#x306F;&#x5224;&#x65AD;&#x3067;&#x304D;&#x305A;&#x3001;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x306F;&#x308B;&#x304B;&#x4E0A;&#x65B9;&#x306B;&#x3042;&#x308B;<code>subject</code>&#x306E;&#x5B9A;&#x7FA9;&#x3092;&#x78BA;&#x8A8D;&#x3057;&#x306A;&#x3051;&#x308C;&#x3070;&#x306A;&#x3089;&#x306A;&#x3044;&#x3002;</p>
+<p>&#x305D;&#x3082;&#x305D;&#x3082;&quot;subject&quot;&#x306F;&#x540D;&#x8A5E;&#x3067;&#x3042;&#x308A;&#x3001;&#x526F;&#x4F5C;&#x7528;&#x3092;&#x671F;&#x5F85;&#x3059;&#x308B;&#x7B87;&#x6240;&#x3067;&#x5B9A;&#x7FA9;&#x3059;&#x308B;&#x3068;&#x6DF7;&#x4E71;&#x3092;&#x62DB;&#x304F;&#x3002;</p>
+<p><code>is_expected</code>&#x3092;&#x5229;&#x7528;&#x3057;&#x6697;&#x9ED9;&#x306E;<code>subject</code>&#x3092;&#x5229;&#x7528;&#x3059;&#x308B;&#x7B87;&#x6240;&#x3068;&#x76F4;&#x63A5;<code>subject</code>&#x3092;&#x660E;&#x793A;&#x3059;&#x308B;&#x7B87;&#x6240;&#x304C;&#x6DF7;&#x5728;&#x3057;&#x3066;&#x304A;&#x308A;&#x3001;&#x3069;&#x3046;&#x3057;&#x3066;&#x3082;<code>subject</code>&#x3092;&#x4F7F;&#x3044;&#x305F;&#x3044;&#x5834;&#x5408;&#x306F;&#x3001;<code>subject</code>&#x306B;&#x540D;&#x524D;&#x3092;&#x3064;&#x3051;&#x3066;&#x4F7F;&#x3046;&#x3068;&#x826F;&#x3044;&#x3002;</p>
+<pre><code class="lang-ruby">describe <span class="hljs-string">&apos;ApiClient#save_record_from_api&apos;</span> <span class="hljs-keyword">do</span>
+  let!(<span class="hljs-symbol">:client</span>) { ApiClient.new }
+  subject(<span class="hljs-symbol">:execute_api_with_params</span>) { client.save_record_from_api(params) }
+
+  context <span class="hljs-string">&apos;when pass  { limit: 10 }&apos;</span> <span class="hljs-keyword">do</span>
+    let(<span class="hljs-symbol">:params</span>) { { <span class="hljs-symbol">limit:</span> <span class="hljs-number">10</span>} }
+
+    it <span class="hljs-string">&apos;return ApiResponse object&apos;</span> <span class="hljs-keyword">do</span>
+      is_expected.to be_an_instance_of ApiResponse
+    <span class="hljs-keyword">end</span>
+
+    it <span class="hljs-string">&apos;save 10 items&apos;</span> <span class="hljs-keyword">do</span>
+      expect { execute_api_with_params }.to change { Item.count }.by(<span class="hljs-number">10</span>)
+    <span class="hljs-keyword">end</span>
+  <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+</code></pre>
+<p><code>expect { subject }</code>&#x306E;&#x6642;&#x3088;&#x308A;&#x306F;&#x308F;&#x304B;&#x308A;&#x3084;&#x3059;&#x304F;&#x306A;&#x3063;&#x305F;&#x306F;&#x305A;&#x3060;&#x3002;</p>
+<p><code>is_expected</code>&#x3092;&#x5229;&#x7528;&#x3057;&#x3066;&#x3044;&#x306A;&#x3044;&#x5834;&#x5408;&#x306F;&#x3001;<code>subject</code>&#x306E;&#x5229;&#x7528;&#x3092;&#x3084;&#x3081;&#x3066;<code>client.save_record_from_api(params)</code>&#x3092;&#x5404;expectation&#x306B;&#x3079;&#x305F;&#x66F8;&#x304D;&#x3059;&#x308B;&#x306E;&#x304C;&#x826F;&#x3044;&#x3002;</p>
+<h3 id="allowanyinstanceof&#x3092;&#x907F;&#x3051;&#x308B;"><a name="allowanyinstanceof&#x3092;&#x907F;&#x3051;&#x308B;" class="plugin-anchor" href="#allowanyinstanceof&#x3092;&#x907F;&#x3051;&#x308B;"><i class="fa fa-link" aria-hidden="true"></i></a>allow_any_instance_of&#x3092;&#x907F;&#x3051;&#x308B;</h3>
+<p><a href="https://relishapp.com/rspec/rspec-mocks/docs/working-with-legacy-code/any-instance" target="_blank">&#x516C;&#x5F0F;&#x306E;&#x30C9;&#x30AD;&#x30E5;&#x30E1;&#x30F3;&#x30C8;</a>&#x306B;&#x3082;&#x66F8;&#x304B;&#x308C;&#x3066;&#x3044;&#x308B;&#x304C;&#x3001;<code>allow_any_instance_of</code>(<code>expect_any_instance_of</code>)&#x304C;&#x5FC5;&#x8981;&#x306A;&#x6642;&#x70B9;&#x3067;&#x30C6;&#x30B9;&#x30C8;&#x5BFE;&#x8C61;&#x306E;&#x8A2D;&#x8A08;&#x304C;&#x304A;&#x304B;&#x3057;&#x3044;&#x53EF;&#x80FD;&#x6027;&#x304C;&#x3042;&#x308B;&#x3002;</p>
+<p>&#x4F8B;&#x3068;&#x3057;&#x3066;&#x3001;&#x6B21;&#x306E;&#x3088;&#x3046;&#x306A;<code>Statement#issue</code>&#x306E;&#x30C6;&#x30B9;&#x30C8;&#x3092;&#x66F8;&#x3044;&#x3066;&#x307F;&#x308B;&#x3002;</p>
+<pre><code class="lang-ruby"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Statement</span></span>
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">issue</span><span class="hljs-params">(body)</span></span>
+    client = TwitterClient.new
+    client.issue(body)
+  <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+</code></pre>
+<pre><code class="lang-ruby">describe Statement <span class="hljs-keyword">do</span>
+  describe <span class="hljs-string">&apos;#issue&apos;</span> <span class="hljs-keyword">do</span>
+    let!(<span class="hljs-symbol">:statement</span>) { Statement.new }
+
+    it <span class="hljs-string">&apos;call TwitterClient#issue&apos;</span> <span class="hljs-keyword">do</span>
+      expect_any_instance_of(TwitterClient).to receive(<span class="hljs-symbol">:issue</span>).with(<span class="hljs-string">&apos;hello&apos;</span>)
+      statement.issue(<span class="hljs-string">&apos;hello&apos;</span>)
+    <span class="hljs-keyword">end</span>
+  <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+</code></pre>
+<p><code>expect_any_instance_of</code>&#x3092;&#x4F7F;&#x3063;&#x3066;&#x3057;&#x307E;&#x3063;&#x305F;&#x306E;&#x306F;&#x3001;<code>Statement</code>&#x30AF;&#x30E9;&#x30B9;&#x3068;<code>TwitterClient</code>&#x30AF;&#x30E9;&#x30B9;&#x304C;&#x5BC6;&#x7D50;&#x5408;&#x3057;&#x3066;&#x3044;&#x308B;&#x306E;&#x304C;&#x539F;&#x56E0;&#x3067;&#x3042;&#x308B;&#x3002;&#x7D50;&#x5408;&#x3092;&#x5F31;&#x3081;&#x3066;&#x307F;&#x308B;&#x3002;</p>
+<pre><code class="lang-ruby"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Statement</span></span>
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">initialize</span><span class="hljs-params">(<span class="hljs-symbol">client:</span> TwitterClient.new)</span></span>
+    @client = client
+  <span class="hljs-keyword">end</span>
+
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">issue</span><span class="hljs-params">(body)</span></span>
+    client.issue(body)
+  <span class="hljs-keyword">end</span>
+
+  private
+
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">client</span></span>
+    @client
+  <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+</code></pre>
+<pre><code class="lang-ruby">describe Statement <span class="hljs-keyword">do</span>
+  describe <span class="hljs-string">&apos;#issue&apos;</span> <span class="hljs-keyword">do</span>
+    let!(<span class="hljs-symbol">:client</span>) { double(<span class="hljs-string">&apos;client&apos;</span>) }
+    let!(<span class="hljs-symbol">:statement</span>) { Statement.new }
+
+    it <span class="hljs-string">&apos;call TwitterClient#issue&apos;</span> <span class="hljs-keyword">do</span>
+      expect(client).to receive(<span class="hljs-symbol">:issue</span>).with(<span class="hljs-string">&apos;hello&apos;</span>)
+      statement.issue(<span class="hljs-string">&apos;hello&apos;</span>)
+    <span class="hljs-keyword">end</span>
+  <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+</code></pre>
+<p><code>issue</code>&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3092;&#x6301;&#x3064;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3067;&#x3042;&#x308C;&#x3070;&#x3001;&#x3069;&#x306E;&#x30AF;&#x30E9;&#x30B9;&#x3067;&#x3082;<code>client</code>&#x3068;&#x3057;&#x3066;&#x6271;&#x3048;&#x308B;&#x3088;&#x3046;&#x306B;&#x4FEE;&#x6B63;&#x3057;&#x305F;&#x3002;&#x5916;&#x90E8;&#x304B;&#x3089;<code>client</code>&#x3092;&#x6307;&#x5B9A;&#x3067;&#x304D;&#x308B;&#x4F5C;&#x308A;&#x306B;&#x3057;&#x305F;&#x3053;&#x3068;&#x3067;&#x3001;&#x5C06;&#x6765;&#x7684;&#x306B;<code>FacebookClient</code>&#x306A;&#x3069;&#x5225;&#x306E;&#x30AF;&#x30E9;&#x30A4;&#x30A2;&#x30F3;&#x30C8;&#x306B;&#x3082;&#x5BFE;&#x5FDC;&#x3067;&#x304D;&#x308B;&#x3088;&#x3046;&#x306B;&#x306A;&#x3063;&#x305F;&#x3002;&#x7D50;&#x5408;&#x304C;&#x5F31;&#x307E;&#x308A;&#x3001;&#x5358;&#x7D14;&#x306A;&#x30E2;&#x30C3;&#x30AF;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3067;&#x30C6;&#x30B9;&#x30C8;&#x304C;&#x8A18;&#x8FF0;&#x3067;&#x304D;&#x308B;&#x3088;&#x3046;&#x306B;&#x306A;&#x3063;&#x305F;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                
+                <a href="./#これはなに" class="navigation navigation-next navigation-unique" aria-label="Next page: これはなに">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Introduction","level":"1.1","depth":1,"next":{"title":"これはなに","level":"1.2","depth":1,"anchor":"#これはなに","path":"README.md","ref":"README.md#これはなに","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["anchors","livereload"],"pluginsConfig":{"anchors":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README.md","mtime":"2017-09-06T02:55:25.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-09-13T04:33:42.892Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
