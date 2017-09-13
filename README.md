@@ -551,7 +551,7 @@ end
 ```
 
 
-### 必要ないレコードを作らない
+## 必要ないレコードを作らない
 
 パフォーマンスの観点から、レコードを作らなくてすむ場合は作らないようにしたい。
 
@@ -619,7 +619,7 @@ end
 
 このような単純なケースでは`User.new`を利用しても良い。
 
-### updateでデータを変更しない
+## updateでデータを変更しない
 
 FactoryGirlで作成したレコード中のカラムをupdateメソッドで変更すると、最終的なレコードの状態がわかりにくくなるし、テストに依存している属性もわかりにくくなるので避ける。
 
@@ -659,7 +659,7 @@ end
 
 updateは使用せず、[FactoryGirlのデフォルト値)](https://github.com/willnet/rspec-style-guide#factorygirlのデフォルト値)に記載したようにデフォルト値をランダムに保つと良い。
 
-### letを上書きしない
+## letを上書きしない
 
 `let`で定義したパラメータを内側のcontextで上書きすると、[updateでデータを変更しない](https://github.com/willnet/rspec-style-guide#updateでデータを変更しない)で説明した例と同様に、最終的なレコードの状態がわかりにくくなるので避ける。
 
@@ -698,7 +698,7 @@ describe Post do
 end
 ```
 
-### subjectを使うときの注意事項
+## subjectを使うときの注意事項
 
 `subject`は`is_expected`や`should`を使い一行でexpectationを書く場合は便利だが、逆に可読性を損なう使われ方をされる場合がある。
 
@@ -754,7 +754,7 @@ end
 
 `is_expected`を利用していない場合は、`subject`の利用をやめて`client.save_record_from_api(params)`を各expectationにべた書きするのが良い。
 
-### allow_any_instance_ofを避ける
+## allow_any_instance_ofを避ける
 
 [公式のドキュメント](https://relishapp.com/rspec/rspec-mocks/docs/working-with-legacy-code/any-instance)にも書かれているが、`allow_any_instance_of`(`expect_any_instance_of`)が必要な時点でテスト対象の設計がおかしい可能性がある。
 
