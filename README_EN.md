@@ -13,7 +13,7 @@ We would like to improve our style guide by hearing all of your opinions, so ple
 # Presumed knowledge
 
 - RSpec
-- FactoryGirl
+- FactoryBot
 
 ## `describe` and `context`
 
@@ -65,16 +65,16 @@ describe Stack do
 end
 ```
 
-# Default values in FactoryGirl
+# Default values in FactoryBot
 
-When using FactoryGirl, you can create default values for the columns of each of your models. It's good to create random variables for each column when you do this. Also, by explicitly defining only which values are necessary inside the tests, it makes it easier to understand which values are the most important.
+When using FactoryBot, you can create default values for the columns of each of your models. It's good to create random variables for each column when you do this. Also, by explicitly defining only which values are necessary inside the tests, it makes it easier to understand which values are the most important.
 
 ### A bad example
 
 For example, we have a column named `active` which will determine whether a user account is active or not. You will often see cases like this where the active/inactive column is fixed.
 
 ```ruby
-FactoryGirl.define do
+FactoryBot.define do
   factory :user do
     name 'willnet'
     active true
@@ -103,7 +103,7 @@ Also, `name` is explicitly defined, but is it really needed? It's usually best t
 ### A good example
 
 ```ruby
-FactoryGirl.define do
+FactoryBot.define do
   factory :user do
     sequence(:name) { |i| "test#{i}" }
     active { [true, false].sample }
@@ -127,16 +127,16 @@ end
 
 With this test, you can tell (although it is implicit) that the return value of `User#active` does not have an effect on the behavior of `User#send_message`. If any changes in the future have an effect on `User#active`, you should be able to tell that the test has failed when the CI tests don't pass every now and then.
 
-## Besides `belongs_to`, don't create default values for associations with FactoryGirl
+## Besides `belongs_to`, don't create default values for associations with FactoryBot
 
-When making a model with FactoryGirl, you can make models that are associated with it at the same time.
+When making a model with FactoryBot, you can make models that are associated with it at the same time.
 
 There isn't really a problem when using `belongs_to`, but you need to watch out when using `has_many`
 
-As an example, we'll define a User that has many posts in FactoryGirl.
+As an example, we'll define a User that has many posts in FactoryBot.
 
 ```ruby
-FactoryGirl.define do
+FactoryBot.define do
   factory :user do
     sequence(:name) { |i| "username#{i}" }
 
@@ -176,7 +176,7 @@ This code is pretty difficult to understand. In this test, the User being create
 To avoid this, first of all let's change the code that created the has many association record as a default.
 
 ```ruby
-FactoryGirl.define do
+FactoryBot.define do
   factory :user do
     sequence(:name) { |i| "username#{i}" }
 
@@ -595,7 +595,7 @@ You can use `User.name` in a simple case like this.
 
 ## Don't change data with update
 
-It's difficult to grasp the final condition of a column of a record created with FactoryGirl when it is changed with `update`, and it's also hard to tell which attributes the test depends on, so it's best to avoid this.
+It's difficult to grasp the final condition of a column of a record created with FactoryBot when it is changed with `update`, and it's also hard to tell which attributes the test depends on, so it's best to avoid this.
 
 ```ruby
 describe Post do
@@ -629,9 +629,9 @@ describe Post do
 end
 ```
 
-Can you tell immediately what attribute depends on the method 'Post#published?'? `update` is mainly used to set and slightly change the "the most used structure of the data being used" as the default value in FactoryGirl.
+Can you tell immediately what attribute depends on the method 'Post#published?'? `update` is mainly used to set and slightly change the "the most used structure of the data being used" as the default value in FactoryBot.
 
-As written in [Default values in FactoryGirl](#default-values-in-factorygirl), it is good to write default values randomly, without using update.
+As written in [Default values in FactoryBot](#default-values-in-factorybot), it is good to write default values randomly, without using update.
 
 ## Don't overwrite `let`
 

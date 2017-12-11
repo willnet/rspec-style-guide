@@ -15,7 +15,7 @@
 ## 前提
 
 - RSpec
-- FactoryGirl
+- FactoryBot
 
 ## describeとcontext
 
@@ -67,16 +67,16 @@ describe Stack do
 end
 ```
 
-## FactoryGirlのデフォルト値
+## FactoryBotのデフォルト値
 
-FactoryGirlを利用した場合、各モデルのデフォルトのカラム値を設定することになる。このとき、各カラムの値がすべてランダム値となるように設定を書くとよい。その上で、必要な値のみをテスト中で明示的に指定することにより、「このテストで重要な値はなにか」がわかりやすくなる。
+FactoryBotを利用した場合、各モデルのデフォルトのカラム値を設定することになる。このとき、各カラムの値がすべてランダム値となるように設定を書くとよい。その上で、必要な値のみをテスト中で明示的に指定することにより、「このテストで重要な値はなにか」がわかりやすくなる。
 
 ### よくない例
 
 アカウントが有効化されているかどうかをactiveカラムで管理しているとする。このような、有効／無効を表すカラムが固定されているケースはよく見かける。
 
 ```ruby
-FactoryGirl.define do
+FactoryBot.define do
   factory :user do
     name 'willnet'
     active true
@@ -105,7 +105,7 @@ end
 ### よい例
 
 ```ruby
-FactoryGirl.define do
+FactoryBot.define do
   factory :user do
     sequence(:name) { |i| "test#{i}"}
     active { [true, false].sample }
@@ -129,16 +129,16 @@ end
 
 このテストだと「`User#active`の戻り値が`User#send_message`の動作に影響しない」ということが(暗黙的にであるが)伝わる。もし`User#active`が影響するような修正が加えられた場合、CIで時々テストが失敗することによって、テストが壊れたことに気付けるはずだ。
 
-## FactoryGirlで`belongs_to`以外の関連をデフォルトで作成しない
+## FactoryBotで`belongs_to`以外の関連をデフォルトで作成しない
 
-FactoryGirlでモデルを作成する際に、関連しているモデルも同時に作成することができる。
+FactoryBotでモデルを作成する際に、関連しているモデルも同時に作成することができる。
 
 対象の関連がbelongs_toであれば特に問題はないが、has_manyの関連を扱う場合には注意が必要になる。
 
-例として、UserとPostが一対多だったとしてFactoryGirlでの定義を書いてみる。
+例として、UserとPostが一対多だったとしてFactoryBotでの定義を書いてみる。
 
 ```ruby
-FactoryGirl.define do
+FactoryBot.define do
   factory :user do
     sequence(:name) { |i| "username#{i}" }
 
@@ -179,7 +179,7 @@ end
 これを避けるには、まず、デフォルトで一対多の関連レコードを作成することをやめるとよい。
 
 ```ruby
-FactoryGirl.define do
+FactoryBot.define do
   factory :user do
     sequence(:name) { |i| "username#{i}" }
 
@@ -621,7 +621,7 @@ end
 
 ## updateでデータを変更しない
 
-FactoryGirlで作成したレコード中のカラムをupdateメソッドで変更すると、最終的なレコードの状態がわかりにくくなるし、テストに依存している属性もわかりにくくなるので避ける。
+FactoryBotで作成したレコード中のカラムをupdateメソッドで変更すると、最終的なレコードの状態がわかりにくくなるし、テストに依存している属性もわかりにくくなるので避ける。
 
 ```ruby
 describe Post do
@@ -655,9 +655,9 @@ describe Post do
 end
 ```
 
-`Post#published?`メソッドに依存している属性をすぐに理解することができるだろうか？updateはたいていFactoryGirlのデフォルト値を「一番データとして多い形」に設定し、それを少し変更して使うために使われる。
+`Post#published?`メソッドに依存している属性をすぐに理解することができるだろうか？updateはたいていFactoryBotのデフォルト値を「一番データとして多い形」に設定し、それを少し変更して使うために使われる。
 
-updateは使用せず、[FactoryGirlのデフォルト値)](https://github.com/willnet/rspec-style-guide#factorygirlのデフォルト値)に記載したようにデフォルト値をランダムに保つと良い。
+updateは使用せず、[FactoryBotのデフォルト値)](https://github.com/willnet/rspec-style-guide#factorybotのデフォルト値)に記載したようにデフォルト値をランダムに保つと良い。
 
 ## letを上書きしない
 
