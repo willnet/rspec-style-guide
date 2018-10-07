@@ -76,8 +76,8 @@ For example, we have a column named `active` which will determine whether a user
 ```ruby
 FactoryBot.define do
   factory :user do
-    name 'willnet'
-    active true
+    name { 'willnet' }
+    active { true }
   end
 end
 ```

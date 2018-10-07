@@ -78,8 +78,8 @@ FactoryBotを利用した場合、各モデルのデフォルトのカラム値�
 ```ruby
 FactoryBot.define do
   factory :user do
-    name 'willnet'
-    active true
+    name { 'willnet' }
+    active { true }
   end
 end
 ```
