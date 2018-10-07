@@ -27,7 +27,7 @@
 ### 例
 
 ```ruby
-describe Stack do
+RSpec.describe Stack, type: :model do
   let!(:stack) { Stack.new }
 
   describe '#push' do
@@ -48,7 +48,7 @@ describe Stack do
 
   describe '#pop' do
     context 'スタックが空の場合' do
-      it '返り値はnilであること' do        
+      it '返り値はnilであること' do
         expect(stack.pop).to be_nil
       end
     end
@@ -56,7 +56,7 @@ describe Stack do
     context 'スタックに値があるとき' do
       before do
         stack.push 'value1'
-        stack.push 'value2'        
+        stack.push 'value2'
       end
 
       it '最後の値を取得すること' do
@@ -85,7 +85,7 @@ end
 ```
 
 ```ruby
-describe User, type: :model do
+RSpec.describe User, type: :model do
   describe '#send_message' do
     let!(:sender) { create :user, name: 'maeshima' }
     let!(:receiver) { create :user, name: 'kamiya' }
@@ -114,7 +114,7 @@ end
 ```
 
 ```ruby
-describe User, type: :model do
+RSpec.describe User, type: :model do
   describe '#send_message' do
     let!(:sender) { create :user }
     let!(:receiver) { create :user }
@@ -488,12 +488,12 @@ describe 'sample specs' do
   end
 
   context 'b' do
-    let!(:need_in_b_and_c) { ... }        
+    let!(:need_in_b_and_c) { ... }
     # ...
   end
 
   context 'c' do
-    let!(:need_in_b_and_c) { ... }        
+    let!(:need_in_b_and_c) { ... }
     # ...
   end
 end
@@ -503,7 +503,7 @@ end
 
 ```ruby
 describe 'sample specs' do
-  let!(:need_in_b_and_c) { ... }        
+  let!(:need_in_b_and_c) { ... }
 
   context 'a' do
     # ...
@@ -592,28 +592,28 @@ end
 モデルのユニットテストでも、作らなくてよいレコードを作っているケースはよくある。
 
 ```ruby
-describe 'User' do
+RSpec.describe User, type: :model do
   describe '#fullname' do
     let!(:user) { create :user, first_name: 'Shinichi', last_name: 'Maeshima' }
 
     it 'return full name' do
       expect(user.fullname).to eq 'Shinichi Maeshima'
     end
-  end  
+  end
 end
 ```
 
 `User#fullname`はレコードが保存されているか否かに影響しないメソッドである。この場合は`create`ではなく`build`(もしくは`build_stubbed`)を使う。
 
 ```ruby
-describe 'User' do
+RSpec.describe User, type: :model do
   describe '#fullname' do
     let!(:user) { build :user, first_name: 'Shinichi', last_name: 'Maeshima' }
 
     it 'return full name' do
       expect(user.fullname).to eq 'Shinichi Maeshima'
     end
-  end  
+  end
 end
 ```
 
@@ -624,7 +624,7 @@ end
 FactoryBotで作成したレコード中のカラムをupdateメソッドで変更すると、最終的なレコードの状態がわかりにくくなるし、テストに依存している属性もわかりにくくなるので避ける。
 
 ```ruby
-describe Post do
+RSpec.describe Post, type: :model do
   let!(:post) { create :post }
 
   describe '#published?' do
@@ -638,20 +638,20 @@ describe Post do
       before { post.update(publish_at: nil) }
 
       it { is_expected.to eq false }
-    end    
+    end
 
     context 'when the post is closed' do
       before { post.update(status: :close) }
 
       it { is_expected.to eq false }
-    end    
+    end
 
     context 'when the title includes "[WIP]"' do
       before { post.update(title: '[WIP]hello world') }
 
       it { is_expected.to eq false }
-    end    
-  end    
+    end
+  end
 end
 ```
 
@@ -664,7 +664,7 @@ updateは使用せず、[FactoryBotのデフォルト値)](https://github.com/wi
 `let`で定義したパラメータを内側のcontextで上書きすると、[updateでデータを変更しない](https://github.com/willnet/rspec-style-guide#updateでデータを変更しない)で説明した例と同様に、最終的なレコードの状態がわかりにくくなるので避ける。
 
 ```ruby
-describe Post do
+RSpec.describe Post, type: :model do
   let!(:post) { create :post, title: title, status: status, publish_at: publish_at }
   let(:title) { 'hello world' }
   let(:status) { :open }
@@ -681,20 +681,20 @@ describe Post do
       let(:publish_at) { nil }
 
       it { is_expected.to eq false }
-    end    
+    end
 
     context 'when the post is closed' do
       let(:status) { :close }
 
       it { is_expected.to eq false }
-    end    
+    end
 
     context 'when the title includes "[WIP]"' do
       let(:title) { '[WIP]hello world'}
 
       it { is_expected.to eq false }
-    end    
-  end    
+    end
+  end
 end
 ```
 
@@ -770,7 +770,7 @@ end
 ```
 
 ```ruby
-describe Statement do
+RSpec.describe Statement do
   describe '#issue' do
     let!(:statement) { Statement.new }
 
@@ -803,7 +803,7 @@ end
 ```
 
 ```ruby
-describe Statement do
+RSpec.describe Statement do
   describe '#issue' do
     let!(:client) { double('client') }
     let!(:statement) { Statement.new }
