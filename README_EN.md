@@ -291,7 +291,7 @@ If you write this test with `let!` only, it will turn out like this:
 ```ruby
 require 'rails_helper'
 
-Rspec.describe User, type: model do
+Rspec.describe User, type: :model do
   describe '.active' do
     let!(:active) { create :user, deleted: false, confirmed_at: Time.zone.now }
     let!(:deleted_but_confirmed) { create :user, deleted: true, confirmed_at: Time.zone.now }

@@ -299,7 +299,7 @@ RSpec.describe User, type: :model do
   describe '.active' do
     let!(:active) { create :user, deleted: false, confirmed_at: Time.zone.now }
     let!(:deleted_but_confirmed) { create :user, deleted: true, confirmed_at: Time.zone.now }
-    let!(:deleted_and_not_convirmed) { create :user, deleted: true, confirmed_at: nil }
+    let!(:deleted_and_not_confirmed) { create :user, deleted: true, confirmed_at: nil }
     let!(:not_deleted_but_not_confirmed) { create :user, deleted: false, confirmed_at: nil }
 
     it 'return active users' do
