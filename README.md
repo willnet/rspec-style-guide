@@ -107,7 +107,7 @@ end
 ```ruby
 FactoryBot.define do
   factory :user do
-    sequence(:name) { |i| "test#{i}"}
+    sequence(:name) { |i| "test#{i}" }
     active { [true, false].sample }
   end
 end
