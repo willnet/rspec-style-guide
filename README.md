@@ -335,6 +335,25 @@ end
 
 ※`let!(:deleted_but_confirmed)`のように名前をつけることで、どんなレコードなのか理解しやすくなると感じる人もいるかもしれない。しかしレコードに名前付けが必要であれば、単純にコメントとして補足してやればよいだろう
 
+## letとlet!の使い分け
+
+基本的に`let!`を推奨する。letの特性である遅延評価が有効に働く次のようなケースではletを使っても良い。
+
+```ruby
+let!(:user) { create :user, enabled: enabled }
+
+context 'when user is enabled' do
+  let(:enabled) { true }
+  it { ... }
+end
+
+context 'when user is disabled' do
+  let(:enabled) { false }
+  it { ... }
+end
+```
+
+`let`で定義した値は呼ばれない限り実行されないので`let!`よりコストが低い、ということを利点として挙げている人もいるが、これを鵜呑みにすると「`let`で定義した値がテストケースによって使われたり使われなかったりする」状態になってしまう。これはテストの前提条件を理解するコストを上げ可読性を落とす。
 
 ## 控えめなDRY
 
@@ -547,7 +566,6 @@ context 'when user is disabled' do
   let(:enabled) { false }
   it { ... }
 end
-
 ```
 
 
