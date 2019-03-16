@@ -32,10 +32,8 @@ RSpec.describe Stack, type: :model do
 
   describe '#push' do
     context '文字列をpushしたとき' do
-      before { stack.push('value') }
-
       it '返り値がpushした値であること' do
-        expect(stack).to eq 'value'
+        expect(stack.push('value')).to eq 'value'
       end
     end
 
