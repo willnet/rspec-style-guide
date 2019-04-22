@@ -780,7 +780,7 @@ end
 describe Statement do
   describe '#issue' do
     let!(:client) { double('client') }
-    let!(:statement) { Statement.new }
+    let!(:statement) { Statement.new(client: client) }
 
     it 'calls TwitterClient#issue' do
       expect(client).to receive(:issue).with('hello')
