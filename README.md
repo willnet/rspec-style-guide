@@ -696,7 +696,7 @@ end
 
 `Post#published?`メソッドに依存している属性をすぐに理解することができるだろうか？updateはたいていFactoryBotのデフォルト値を「一番データとして多い形」に設定し、それを少し変更して使うために使われる。
 
-updateは使用せず、[FactoryBotのデフォルト値)](https://github.com/willnet/rspec-style-guide#factorybotのデフォルト値)に記載したようにデフォルト値をランダムに保つと良い。
+updateは使用せず、[FactoryBotのデフォルト値](https://github.com/willnet/rspec-style-guide#factorybotのデフォルト値)に記載したようにデフォルト値をランダムに保つと良い。
 
 ## letを上書きしない
 
