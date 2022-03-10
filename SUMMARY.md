@@ -5,7 +5,7 @@
 * [前提](README.md#前提)
 * [describeとcontext](README.md#describeとcontext)
 * [FactoryBotのデフォルト値](README.md#factorybotのデフォルト値)
-* [FactoryBotで`belongs_to`以外の関連をデフォルトで作成しない](README.md#factorybotでbelongsto以外の関連をデフォルトで作成しない)
+* [FactoryBotで`belongs_to`以外の関連をデフォルトで作成しない](README.md#factorybotでbelongs_to以外の関連をデフォルトで作成しない)
 * [日時を取り扱うテストを書く](README.md#日時を取り扱うテストを書く)
 * [日付を外部から注入する](README.md#日付を外部から注入する)
 * [beforeとlet(let!)の使い分け](README.md#beforeとletletの使い分け)
