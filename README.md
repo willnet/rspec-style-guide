@@ -184,7 +184,7 @@ RSpec.describe User, type: :model do
       post
     end
 
-    it 'return posts ordered by populality' do
+    it 'return posts ordered by popularity' do
       expect(user.posts_ordered_by_popularity).to eq [post_popular, post_not_popular]
     end
   end
@@ -220,7 +220,7 @@ RSpec.describe User, type: :model do
     let!(:post_popular) { create :post, user: user, popularity: 5 }
     let!(:post_not_popular) { create :post, user: user, popularity: 1 }
 
-    it 'return posts ordered by populality' do
+    it 'return posts ordered by popularity' do
       expect(user.posts_ordered_by_popularity).to eq [post_popular, post_not_popular]
     end
   end

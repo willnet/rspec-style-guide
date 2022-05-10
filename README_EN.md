@@ -299,7 +299,7 @@ Rspec.describe User, type: :model do
     let!(:not_deleted_but_not_confirmed) { create :user, deleted: false, confirmed_at: nil }
 
     it 'returns active users' do
-      expect(User.active).to eq [acitve]
+      expect(User.active).to eq [active]
     end
   end
 end
@@ -682,7 +682,7 @@ describe 'ApiClient#save_record_from_api' do
   subject { client.save_record_from_api(params) }
 
   #
-  # ...A bunch of expecations...
+  # ...A bunch of expectations...
   #
 
   context ' when pass { limit: 10 }' do
@@ -703,10 +703,10 @@ In cases like this, it's not very easy to tell what  the `subject` of `expect { 
 
 "subject" is a noun, so placing it where an effect is expected will just confuse the reader.
 
-When `is_expected` is used with an implicit `subject`, and an explicitly defined `subject` are both mixed inthe same code, if you really want to use `subject` in this case, it's good to give subject a name.
+When `is_expected` is used with an implicit `subject`, and an explicitly defined `subject` are both mixed in the same code, if you really want to use `subject` in this case, it's good to give subject a name.
 
 ```ruby
-describe 'ApiCleint#save_record_from_api' do
+describe 'ApiClient#save_record_from_api' do
   let!(:client) { ApiClient.new }
   subject(:execute_api_with_params) { client.save_record_from_api(params) }
 
@@ -746,11 +746,11 @@ end
 ```ruby
 describe Statement do
   describe '#issue' do
-    let!(:statment) { Statement.new }
+    let!(:statement) { Statement.new }
 
     it 'calls TwitterClient#issue' do
       expect_any_instance_of(TwitterClient).to receive(:issue).with('hello')
-      statment.issue('hello')
+      statement.issue('hello')
     end
   end
 end
@@ -760,7 +760,7 @@ The reason we used `expect_any_instance_of` was to combine the `Statement` class
 
 ```ruby
 class Statement
-  def initialize(cleint: TwitterClient.new)
+  def initialize(client: TwitterClient.new)
     @client = client
   end
 
