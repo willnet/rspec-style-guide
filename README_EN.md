@@ -730,7 +730,7 @@ When `is_expected` isn't being used, it's good forget using `subject` and just w
 
 ## Avoid using `allow_any_instance_of`
 
-It's also written in the [official documentation](https://relishapp.com/rspec/rspec-mocks/docs/working-with-legacy-code/any-instance), but there is a chance that the test's target design will bug out when using `allow_any_instance_of` (`expect_any_instance_of`).
+It's also written in the [official documentation](https://rspec.info/features/3-12/rspec-mocks/working-with-legacy-code/any-instance/), but there is a chance that the test's target design will bug out when using `allow_any_instance_of` (`expect_any_instance_of`).
 
 As an example, Let's write a test for `Statement#issue`
 
