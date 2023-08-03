@@ -795,7 +795,7 @@ end
 
 ## allow_any_instance_ofを避ける
 
-[公式のドキュメント](https://relishapp.com/rspec/rspec-mocks/docs/working-with-legacy-code/any-instance)にも書かれているが、`allow_any_instance_of`(`expect_any_instance_of`)が必要な時点でテスト対象の設計がおかしい可能性がある。
+[公式のドキュメント](https://rspec.info/features/3-12/rspec-mocks/working-with-legacy-code/any-instance/)にも書かれているが、`allow_any_instance_of`(`expect_any_instance_of`)が必要な時点でテスト対象の設計がおかしい可能性がある。
 
 例として、次のような`Statement#issue`のテストを書いてみる。
 
