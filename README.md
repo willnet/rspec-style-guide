@@ -385,7 +385,7 @@ DRYにする行為は常に善だと思われているかもしれないが、�
 shared_examplesを利用するとコードの重複を削除できるが、書き方によってはかえって可読性を落とすことがある。
 
 
-例として、引数として渡された曜日に対応した分だけポイントを増やすメソッド`Point#increase_by_day_of_the_week`のテストを`shared_examples`を利用して書いてみる。shard_exampleの定義は別ファイルに書かれているとして、先にshared_examplesを利用する側だけのコードを見てみる。
+例として、引数として渡された曜日に対応した分だけポイントを増やすメソッド`Point#increase_by_day_of_the_week`のテストを`shared_examples`を利用して書いてみる。shared_examplesの定義は別ファイルに書かれているとして、先にshared_examplesを利用する側だけのコードを見てみる。
 
 ```ruby
 RSpec.describe Point, type: :model do
